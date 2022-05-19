@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
 
 body {
-    background-image: url("bg.jpg");
+    background-image: url("bg.png");
     height: 1080px;
     background-repeat: no-repeat; 
     background-size: contain; 
@@ -10,9 +10,9 @@ body {
 .normalButton {
     font-family: "Akshar", sans-serif;
     font-weight: 600;
-    font-size: 30px;
-    height: 50px;
-    width: 130px;
+    font-size: 27px;
+    height: 45px;
+    width: 110px;
     color: #F3ECD9;
     background-color: #C5D272;
     border: 4px solid #A1AD53;
@@ -22,21 +22,11 @@ body {
 }
 
 .normalButton:hover {
-    font-family: "Akshar", sans-serif;
     text-shadow: 2px 2px #6b6b6b;;
-    font-weight: 600;
-    font-size: 30px;
-    height: 50px;
-    width: 130px;
-    color: #F3ECD9;
-    background-color: #C5D272;
-    border: 4px solid #A1AD53;
-    border-radius: 12px;
-    outline: 6px solid #F3ECD9;
     box-shadow: 5px 5px 2px 5px #6b6b6b;
 }
 
-.popUpButton {
+.popUp {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -46,13 +36,11 @@ body {
     box-shadow: 3px 3px 2px 2px #a7a7a7;
 }
 
-.popUpButton:hover {
-    text-shadow: 1px 2px #6b6b6b;
+.popUpButton {
     height: 30px;
     width: 30px;
-    border-radius: 50%;
-    background-color: #C5D272;
-    border: 3px solid #A1AD53;
-    outline: 3px solid #F3ECD9;
+}
+
+.popUp:hover {
     box-shadow: 3px 3px 2px 2px #6b6b6b;
 }

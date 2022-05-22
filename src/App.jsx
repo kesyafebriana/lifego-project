@@ -12,9 +12,12 @@ function App() {
         <Button 
             item="START"
         />
+        <br/>
+        <br/>
         <PopUpButton 
             pict={Profile}
         />
+        <br/>
         <PopUpButton 
             pict={QMark}
         />

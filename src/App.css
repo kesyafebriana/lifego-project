@@ -56,3 +56,25 @@ body {
     outline: 3px solid #F3ECD9;
     box-shadow: 3px 3px 2px 2px #6b6b6b;
 }
+
+#inputName {
+    color: #F3ECD9;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: 1.5px;
+    padding-left: 17px;
+    width: 460px;
+    height: 30px;
+    margin-top: 617px;
+    margin-left: 700px;
+    border-radius: 15px;
+    background-color: #C5D272;
+    border: 3px solid #A1AD53;
+    outline: 5px solid #F3ECD9;
+    box-shadow: 3px 3px 2px 2px #a7a7a7;
+}
+
+::placeholder {
+    color: #F3ECD9;
+}

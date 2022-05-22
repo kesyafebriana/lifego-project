@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUs";
 import AboutUsBackground from "./assets/aboutUs.png";
 import './App.css';
 
+
 function App() {
     const [isOpen, setIsOpen] = useState(false);
     const togglePopup = () => {

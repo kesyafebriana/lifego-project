@@ -4,6 +4,7 @@ import PopUpButton from "./components/popUpButton";
 import Profile from "./assets/popUpTeam.png";
 import QMark from "./assets/popUpQMark.png";
 import InputName from './components/InputName';
+import InputMajor from './components/InputMajor';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             pict={QMark}
         />
         <InputName />
+        <InputMajor />
     </>
     );
 }

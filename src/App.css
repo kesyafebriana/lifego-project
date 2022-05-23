@@ -9,6 +9,12 @@ body {
     overflow: hidden;
 }
 
+.logo {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
 .normalButton {
     font-family: "Akshar", sans-serif;
     font-weight: 600;
@@ -24,13 +30,26 @@ body {
 }
 
 .normalButton:hover {
-    text-shadow: 2px 2px #6b6b6b;;
+    outline: 6px solid #F3ECD9;
+    text-shadow: 2px 2px #6b6b6b;
     box-shadow: 5px 5px 2px 5px #6b6b6b;
 }
 
+.logoStart {
+    text-align: center;
+}
+
+.aboutUsButton {
+    margin-right: 70px;
+}
+
 .popUp {
-    height: 30px;
-    width: 30px;
+    float:right;
+    margin-right: 30px;
+    margin-top: 18px;
+    align-items: right;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     background-color: #C5D272;
     border: 3px solid #A1AD53;

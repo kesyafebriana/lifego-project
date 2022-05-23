@@ -2,11 +2,11 @@
 
 body {
     font-family: "Akshar", sans-serif;
-    background-image: url("bg.png");
+    background-image: url("bgLP.png");
     height: 1080px;
     background-repeat: no-repeat; 
     background-size: contain; 
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .logo {
@@ -37,6 +37,7 @@ body {
 
 .logoStart {
     text-align: center;
+    margin-top: 25px;
 }
 
 .aboutUsButton {
@@ -64,38 +65,6 @@ body {
 
 .popUp:hover {
     box-shadow: 3px 3px 2px 2px #6b6b6b;
-}
-
-#inputName {
-    color: #F3ECD9;
-    font-family: "Akshar", sans-serif;
-    font-weight: 600;
-    font-size: 23px;
-    letter-spacing: 1.5px;
-    padding-left: 17px;
-    width: 460px;
-    height: 37px;
-    margin-top: 527px;
-    margin-left: 730px;
-    border-radius: 15px;
-    background-color: #C5D272;
-    border: 3px solid #A1AD53;
-    outline: 5px solid #F3ECD9;
-    box-shadow: 3px 3px 2px 2px #a7a7a7;
-}
-
-::placeholder {
-    color: #F3ECD9;
-}
-
-#inputMajor {
-    width: 460px;
-    margin-top: 39px;
-    margin-left: 730px;
-    font-family: "Akshar", sans-serif;
-    font-weight: 600;
-    font-size: 23px;
-    letter-spacing: 1.5px;
 }
 
 /* Popup style */
@@ -248,4 +217,37 @@ body {
 
 .buibu {
     width: 120px;
+}
+
+
+#inputName {
+    color: #F3ECD9;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding-left: 17px;
+    width: 350px;
+    height: 37px;
+    margin-top: 335px;
+    margin-left: 510px;
+    border-radius: 15px;
+    background-color: #C5D272;
+    border: 3px solid #A1AD53;
+    outline: 5px solid #F3ECD9;
+    box-shadow: 3px 3px 2px 2px #a7a7a7;
+}
+
+::placeholder {
+    color: #F3ECD9;
+}
+
+#inputMajor {
+    width: 350px;
+    margin-top: 19px;
+    margin-left: 510px;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
 }

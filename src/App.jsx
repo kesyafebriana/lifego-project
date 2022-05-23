@@ -45,9 +45,13 @@ function App() {
                 <PopUpButton pict={Profile} handleClick = {togglePopupAboutUs} />
                 {isOpenAboutUs && <AboutUs closeButton={CloseButton} pict={AboutUsBackground} handleClose={togglePopupAboutUs}/>}
             </div>
-            {/* <ChooseChar /> */}
             <div className="logo">
                 <img width="27%" src={Logo} />
+            </div>
+            {/* <ChooseChar />  */}
+            <div className="input">
+                <InputName />
+                <InputMajor /> 
             </div>
             <div className="logoStart">
                 <Button 

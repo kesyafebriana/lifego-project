@@ -2,3 +2,8 @@ BUTTON
     <Button 
             item="START" -> Diisi tulisan apa yang mau ditampilkan
     />
+
+POP UP BUTTON (ROUNDED BUTTON)
+        <PopUpButton 
+            pict={Profile} -> Diisi file foto yang sudah diimport
+        />

@@ -5,6 +5,7 @@ import Profile from "./assets/popUpTeam.png";
 import QMark from "./assets/popUpQMark.png";
 import InputName from './components/InputName';
 import InputMajor from './components/InputMajor';
+import ChooseChar from './ChooseChar';
 import GameGuideBackground from "./assets/gameGuide.png";
 import CloseButton from "./assets/tombol-close.png";
 import GameGuide from './components/GameGuide';
@@ -33,6 +34,11 @@ function App() {
             
             <PopUpButton pict={QMark} handleClick = {togglePopup} />
             {isOpen && <GameGuide closeButton={CloseButton} pict={GameGuideBackground} handleClose={togglePopup}/>}
+
+            {/* <ChooseChar />
+            <InputName />
+            <InputMajor /> */}
+            
         </>
     );
 }

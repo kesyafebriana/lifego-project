@@ -3,7 +3,7 @@ import React from "react";
 export default function InputName() {
     return (
         <div>
-            <input id="inputName" placeholder="Enter your name here. . ."></input>
+            <input className="row mx-auto" id="inputName" placeholder="Enter your name here. . ."></input>
         </div>
     )
 }

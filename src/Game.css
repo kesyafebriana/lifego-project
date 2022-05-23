@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+body {
+    font-family: "Akshar", sans-serif;
+    background-image: url("");
+    height: 1080px;
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    overflow: hidden;
+}
+
+.time {
+    margin-top: 90px;
+    text-align: center;
+    color:#A1AD53;
+    text-shadow: 2px 2px 3px#999999;
+}
+
+.timeClock {
+    font-weight: bold;
+    text-shadow: 2px 2px 3px#999999;
+}
+
+.greeting {
+    font-weight: bold;
+    text-shadow: 2px 2px 3px#999999;
+}

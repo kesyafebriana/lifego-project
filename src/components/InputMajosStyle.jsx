@@ -23,7 +23,7 @@ const InputMajorStyle = {
             ...styles,
             backgroundColor: "#A1AD53",
             borderTopRightRadius: 5,
-            height: 38,
+            height: 37,
             width: 65,
             marginBottom: 20,
             paddingLeft: 20

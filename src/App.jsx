@@ -34,17 +34,6 @@ function App() {
 
     return (
         <>
-            <Button item="START"/>
-
-            <PopUpButton pict={Profile} handleClick = {togglePopupAboutUs} />
-            {isOpenAboutUs && <AboutUs closeButton={CloseButton} pict={AboutUsBackground} handleClose={togglePopupAboutUs}/>}
-            
-            <PopUpButton pict={QMark} handleClick = {togglePopup} />
-            {isOpen && <GameGuide closeButton={CloseButton} pict={GameGuideBackground} handleClose={togglePopup}/>}
-
-            {/* <ChooseChar />
-            <InputName />
-            <InputMajor /> */}
             
             <div className="gameGuideButton">
                 <PopUpButton pict={QMark} handleClick = {togglePopup} />
@@ -56,6 +45,11 @@ function App() {
             </div>
             <div className="logo">
                 <img width="27%" src={Logo} />
+            </div>
+            {/* <ChooseChar />  */}
+            <div className="input">
+                <InputName />
+                <InputMajor /> 
             </div>
             <div className="logoStart">
                 <Button 

@@ -6,7 +6,7 @@ body {
     height: 1080px;
     background-repeat: no-repeat;
     background-size: contain;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .logo {
@@ -79,6 +79,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
 }
 
 .box {
@@ -102,7 +103,7 @@ body {
     width: 70%;
     margin-bottom: 20px;
     font-family: "Akshar", sans-serif;
-    font-size: larger;
+    font-size: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 120px;
@@ -110,6 +111,8 @@ body {
     padding-right: 13px;
     z-index: 2;
     line-height: 2.5;
+    margin-top: -25px;
+    margin-right: 100px;
 }
 
 .popup-container {
@@ -142,33 +145,33 @@ body {
 
 .aboutus-description {
     position: absolute;
-    top: 5;
+    top: 7;
     max-height: 65%;
-    width: 70%;
+    width: 100%;
     font-family: "Akshar", sans-serif;
     font-size: larger;
     padding-left: 33px;
-    text-align: justify;
-    padding-right: 13px;
     z-index: 2;
     line-height: 1.2;
+    margin-right: -55px;
+    margin-top: -190px;
 }
 
 .au1 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 10px;
+    padding-left: 120px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
-    padding-top: 110px;
+    padding-top: 100px;
     align-items: center;
 }
 
 .au2 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 743px;
+    padding-left: 643px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
@@ -179,7 +182,7 @@ body {
 .au3 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 10px;
+    padding-left: 110px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
@@ -190,7 +193,7 @@ body {
 .au4 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 730px;
+    padding-left: 630px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
@@ -233,6 +236,7 @@ body {
     border: 3px solid #A1AD53;
     outline: 5px solid #F3ECD9;
     box-shadow: 3px 3px 2px 2px #a7a7a7;
+    margin-top: 20px;
 }
 
 ::placeholder {
@@ -259,16 +263,17 @@ body {
     background-color: #A1AD53;
     border-radius: 10px;
     border: #A1AD53;
-    height: 33px;
+    height: 34px;
     margin-right: -13px;
+    margin-top: -98px;
 }
 
 .slider {
-    position: relative;
-    height: 510px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 .img {

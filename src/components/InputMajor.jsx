@@ -7,7 +7,7 @@ export default function InputMajor() {
 
     return (
         <div id="inputMajor" className="row mx-auto">
-            {/* <p>{option}</p> */}
+            <p>{option}</p>
             <div align="end">
                 <Dropdown onSelect={(e) => setOption(e)}>
                     <Dropdown.Toggle id="inputMajorBtn">

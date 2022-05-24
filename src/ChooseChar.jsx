@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import Images from './components/Images';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 export default function ChooseChar({ slides }) {
     const [current, setCurrent] = useState(null);
@@ -29,8 +29,7 @@ export default function ChooseChar({ slides }) {
 
     return (
         <section className='slider'>
-            <div className='row'>
-                <RiArrowLeftSLine className='col' id='arrow' onClick={prevSlide} />
+                <RiArrowLeftSLine id='arrow' onClick={prevSlide} />
                 {Images.map((image, index) => {
                     return (
                         <div
@@ -38,13 +37,12 @@ export default function ChooseChar({ slides }) {
                             key={index}
                         >
                             {index === current && (
-                                <img src={image.url} className='slide col' />
+                                <img src={image.url} className='img' />
                             )}
                         </div>
                     );
                 })}
-                <RiArrowRightSLine className='col' id='arrow' onClick={nextSlide} />
-            </div>
+                <RiArrowRightSLine id='arrow' onClick={nextSlide} />
 
         </section>
     );

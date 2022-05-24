@@ -8,6 +8,7 @@ import QMark from "./assets/popUpQMark.png";
 import InputName from './components/InputName';
 import InputMajor from './components/InputMajor';
 import ChooseChar from './ChooseChar';
+import Images from './components/Images';
 import Logo from "./assets/logofix.png";
 import GameGuideBackground from "./assets/gameGuide.png";
 import CloseButton from "./assets/tombol-close.png";
@@ -34,7 +35,6 @@ function App() {
 
     return (
         <>
-            
             <div className="gameGuideButton">
                 <PopUpButton pict={QMark} handleClick = {togglePopup} />
                 {isOpen && <GameGuide closeButton={CloseButton} pict={GameGuideBackground} handleClose={togglePopup}/>}
@@ -46,11 +46,11 @@ function App() {
             <div className="logo">
                 <img width="27%" src={Logo} />
             </div>
-            {/* <ChooseChar />  */}
-            <div className="input">
+            <ChooseChar slides={Images}/>
+            <div className="input col">
                 <InputName />
-                <InputMajor /> 
-            </div>
+                <InputMajor />
+            </div>  
             <div className="logoStart">
                 <Button 
                     item="START"

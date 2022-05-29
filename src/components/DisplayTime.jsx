@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
 function DisplayTime(props) {
-   const [name, setName] = useState("Kesya");
 
     const greeting = () => {
         if(props.time.m >= 5 && props.time.m <= 11){
-          return "Good Morning, " + name + "!";
+          return "Good Morning, " + props.name + "!";
         } else if(props.time.m > 11 && props.time.m <= 16){
-            return "Good Afternoon, " + name + "!";
+            return "Good Afternoon, " + props.name + "!";
         } else if(props.time.m > 16 && props.time.m <= 19){
-            return "Good Evening, " + name + "!";
+            return "Good Evening, " + props.name + "!";
         } else if(props.time.m > 19 && props.time.m <= 23 || props.time.m >= 0 && props.time.m <= 4){
-            return "Good Night, " + name + "!";
+            return "Good Night, " + props.name + "!";
         } else {
            return "";
         }

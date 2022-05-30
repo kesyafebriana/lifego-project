@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DisplayTime from "./DisplayTime";
 import BtnPauseResume from "./BtnPauseResume";
 
-function Time() {
+function Time(props) {
   const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
@@ -61,7 +61,7 @@ function Time() {
         <BtnPauseResume status={status} resume={resume} stop={stop} />
       </div>
       <div className="time">
-        <DisplayTime time={time} />
+        <DisplayTime name={props.name} time={time} />
       </div>
     </>
   );

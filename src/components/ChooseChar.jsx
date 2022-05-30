@@ -1,26 +1,25 @@
 import { useState, useEffect } from 'react';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
-import Images from './components/Images';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Images from './Images';
 
-export default function ChooseChar({ slides }) {
+export default function ChooseChar({ slides, character }) {
     const [current, setCurrent] = useState(null);
     const length = slides.length;
 
     useEffect(() => {
-        setCurrent(current === null ? 0 : current)
-        console.log(current)
+        setCurrent(current === null ? 0 : current);
     }, []);
 
     const nextSlide = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);
         console.log(current);
+        character(current);
     };
 
     const prevSlide = () => {
         setCurrent(current === 0 ? length - 1 : current - 1);
         console.log(current);
+        character(current);
     };
 
     if (!Array.isArray(slides) || slides.length <= 0) {

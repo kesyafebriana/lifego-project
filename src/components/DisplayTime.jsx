@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function DisplayTime(props) {
-   const [name, setName] = useState("Kesya");
+   const [name, setName] = useState("");
 
     const greeting = () => {
         if(props.time.m >= 5 && props.time.m <= 11){
@@ -18,20 +18,20 @@ function DisplayTime(props) {
      }
 
   const h = () => {
-     if(props.time.h === 0){
+      if(props.time.h === 0) {
+      return "Minggu";
+     } else if(props.time.h === 1){
        return "Senin";
-     } else if(props.time.h === 1) {
-       return "Selasa";
      } else if(props.time.h === 2) {
-        return "Rabu";
+       return "Selasa";
      } else if(props.time.h === 3) {
-        return "Kamis";
+        return "Rabu";
      } else if(props.time.h === 4) {
+        return "Kamis";
+     } else if(props.time.h === 5) {
         return "Jumat";
      } else if(props.time.h === 6) {
         return "Sabtu";
-     } else if(props.time.h === 7) {
-        return "Minggu";
      } else {
         return "";
      }

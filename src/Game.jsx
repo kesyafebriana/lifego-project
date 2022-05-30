@@ -6,7 +6,7 @@ function Game() {
 
     return (
         <>
-            <Time />       
+            <Time />  
         </>
     );
 }

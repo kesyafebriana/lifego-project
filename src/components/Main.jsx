@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     BrowserRouter,
     Routes,
@@ -13,21 +13,24 @@ import '../App.css';
 export default function Main() {
     const [major, setMajor] = useState("");
     const [name, setName] = useState("");
-    const [character, setCharacter] = useState(null);
+    const [character, setCharacter] = useState(0);
+
+    useEffect(() => {
+        console.log(name);
+        console.log(major);
+        console.log(character);
+    }, [name, major, character])
 
     function getMajor(majorget) {
         setMajor(majorget);
-        console.log(major);
     }
 
     function getName(nameget) {
         setName(nameget);
-        console.log(name);
     }
 
     function getCharacter(characterget) {
         setCharacter(characterget);
-        console.log(character);
     }
 
     return (

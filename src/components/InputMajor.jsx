@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Majors from "./Majors";
 import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function InputMajor({majorget}) {
     const [option, setOption] = useState("");
 
+    useEffect(() => {
+        majorget(option);
+    }, [option])
+
     function handleSelect(e) {
         setOption(e);
-        console.log("ini input " + option);
-        majorget(option);
     }
 
     return (

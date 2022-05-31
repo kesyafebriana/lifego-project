@@ -50,11 +50,11 @@ function Time(props) {
     start();
   }
 
-  if (time.h === 8) {
-    console.log("Blabla" + time.h);
-    clearInterval(interv);
-    setStatus(0);
-  }
+  // if (time.h === 8) {
+  //   console.log("Blabla" + time.h);
+  //   clearInterval(interv);
+  //   setStatus(0);
+  // }
 
   return (
     <>

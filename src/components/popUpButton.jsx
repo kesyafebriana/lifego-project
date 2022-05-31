@@ -1,10 +1,13 @@
 import React from "react";
 
-function PopUpButton({pict}) {
-
+function PopUpButton({pict, handleClick}) {
+    function handleClickFunction() {
+        handleClick ()
+    }
+    
     return (
         <>
-            <div className="popUp">
+            <div className="popUp" onClick={handleClickFunction}>
                 <img className="popUpButton" src={pict} />
             </div>
         </>

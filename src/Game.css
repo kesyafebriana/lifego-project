@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+body {
+    font-family: "Akshar", sans-serif;
+    background-image: url("");
+    height: 1080px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.time {
+    margin-top: 90px;
+    text-align: center;
+    color: #A1AD53;
+    text-shadow: 2px 2px 3px#999999;
+}
+
+.timeClock {
+    font-weight: bold;
+    text-shadow: 2px 2px 3px#999999;
+}
+
+.greeting {
+    font-weight: bold;
+    text-shadow: 2px 2px 3px#999999;
+}
+
+#bar {
+    width: 226px;
+    height: 36.5px;
+    border-radius: 25px;
+    margin-top: 0.4px;
+    margin-left: 0.3px;
+    background-color: #A1AD53;
+}
+
+#bar .progress-bar {
+    background-color: #C5D272;
+}
+
+#barContainer {
+    /* margin-top: 40px;
+    margin-left: 338px; */
+    width: 235px;
+    height: 45px;
+    border-radius: 25px;
+    border: 4px solid #A1AD53;
+    outline: 5px solid #F3ECD9;
+}
+
+#barBtn {
+    /* margin-top: 190px;
+    margin-left: 205px; */
+    height: 72px;
+    width: 175px;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: #F3ECD9;
+    background-color: #C5D272;
+    border-radius: 25px;
+    border: 6px solid #A1AD53;
+    outline: 6px solid #F3ECD9;
+}

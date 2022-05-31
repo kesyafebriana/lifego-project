@@ -2,7 +2,7 @@
 
 body {
     font-family: "Akshar", sans-serif;
-    background-image: url("");
+    background-image: url("./assets/GamePage.png") !important;
     height: 1080px;
     background-repeat: no-repeat;
     background-size: contain;
@@ -27,12 +27,11 @@ body {
 }
 
 #bar {
-    width: 226px;
+    width: 227px;
     height: 36.5px;
     border-radius: 25px;
-    margin-top: 0.4px;
-    margin-left: 0.3px;
     background-color: #A1AD53;
+    margin-left: -12px;
 }
 
 #bar .progress-bar {

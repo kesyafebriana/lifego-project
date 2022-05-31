@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function InputName({nameget}) {
 
     const [input, setInput] = useState("");
 
-    function handleChange(event) {
-        setInput(event.target.value);
-        console.log(input);
+    useEffect(() => {
         nameget(input);
+    }, [input])
+
+    const handleChange = (e) => {
+        setInput(e.target.value);
     }
 
     return (

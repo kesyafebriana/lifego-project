@@ -8,18 +8,15 @@ export default function ChooseChar({ slides, character }) {
 
     useEffect(() => {
         setCurrent(current === null ? 0 : current);
-    }, []);
+        character(current);
+    }, [current]);
 
     const nextSlide = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);
-        console.log(current);
-        character(current);
     };
 
     const prevSlide = () => {
         setCurrent(current === 0 ? length - 1 : current - 1);
-        console.log(current);
-        character(current);
     };
 
     if (!Array.isArray(slides) || slides.length <= 0) {
@@ -29,7 +26,7 @@ export default function ChooseChar({ slides, character }) {
     return (
         <section className='slider'>
                 <RiArrowLeftSLine id='arrow' onClick={prevSlide} />
-                {Images.map((image, index) => {
+                {Images[0].normal.map((image, index) => {
                     return (
                         <div
                             className={index === current ? 'slide active' : 'slide'}

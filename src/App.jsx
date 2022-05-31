@@ -15,7 +15,6 @@ import AboutUs from "./components/AboutUs";
 import AboutUsBackground from "./assets/aboutUs.png";
 import { Link } from 'react-router-dom';
 
-
 function App(props) {
     const [isOpen, setIsOpen] = useState(false);
     const togglePopup = () => {
@@ -40,7 +39,7 @@ function App(props) {
             <div className="logo">
                 <img width="27%" src={Logo} />
             </div>
-            <ChooseChar character={props.character} slides={Images} />
+            <ChooseChar character={props.character} slides={Images[0].normal} />
             <div className="input col">
                 <InputName nameget={props.name} />
                 <InputMajor majorget={props.major} />

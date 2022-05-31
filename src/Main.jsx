@@ -4,11 +4,9 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import App from "../App";
-import Game from "../Game";
-import '../App.css';
+import App from "./App";
+import Game from "./Game";
+import './App.css';
 
 export default function Main() {
     const [major, setMajor] = useState("");

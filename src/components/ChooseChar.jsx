@@ -26,7 +26,7 @@ export default function ChooseChar({ slides, character }) {
     return (
         <section className='slider'>
                 <RiArrowLeftSLine id='arrow' onClick={prevSlide} />
-                {Images.map((image, index) => {
+                {Images[0].normal.map((image, index) => {
                     return (
                         <div
                             className={index === current ? 'slide active' : 'slide'}

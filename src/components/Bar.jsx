@@ -4,12 +4,11 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 export default function Bar(props) {
 
     return (
-        <div>
-            {/* <img src={props.img} /> */}
-            <div id="barContainer">
+        <div className="col row" id="soloBar">
+            <img className="col" src={props.img} />
+            <div className="col" id="barContainer">
                 <ProgressBar id="bar" now={props.action} />
             </div>
-            <button id="barBtn" onClick={props.onClick}>{props.name}</button>
         </div>
     );
 

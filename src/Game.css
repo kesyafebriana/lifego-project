@@ -9,6 +9,55 @@ body {
     overflow: hidden;
 }
 
+.mobile-container {
+    aspect-ratio: 9/18;
+    width: 250px;
+    top: 15%;
+    right: 5%;
+    padding: 2rem;
+    padding-top: 3rem;
+    position: absolute;
+    background-image: url("./assets/HP.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center; 
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+.mobile-foto {
+    height: 100px;
+    width: 100%;
+    /* background-color: rgba(172, 172, 172, .5); */
+}
+
+.mobile-news-heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.mobile-foto img {
+    border-radius: 3px;
+}
+
+.mobile-title {
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+}
+
+.mobile-description {
+    font-size: 10px;
+}
+
+.background-image {
+    position: absolute !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow:scroll;    
+    z-index: -2;
+}
+
 .time {
     margin-top: 90px;
     text-align: center;

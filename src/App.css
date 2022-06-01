@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
 
 body {
+    font-family: "Akshar", sans-serif;
     background-image: url("bg.png");
     height: 1080px;
     background-repeat: no-repeat; 

@@ -18,6 +18,8 @@ export default function Main() {
         console.log(name);
         console.log(major);
         console.log(character);
+
+        localStorage.setItem("jurusan", major);
     }, [name, major, character])
 
     function getMajor(majorget) {

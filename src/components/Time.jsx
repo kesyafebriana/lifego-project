@@ -11,9 +11,9 @@ function Time(props, {getTimebella}) {
   // started = 1
   // stopped = 2
 
-  useEffect (() => {
-    getTimebella(time);
-  }, [time])
+  // useEffect (() => {
+  //   getTimebella(time);
+  // }, [time])
 
   const start = () => {
     run();

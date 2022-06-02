@@ -74,14 +74,6 @@ function Game(props) {
         });
     },[]);
 
-    useEffect(()=>{
-        fetch(NEWS_API)
-        .then((res)=>res.json())
-        .then((data)=>{
-            setNews(data.articles[index]);
-        });
-    },[]);
-
       {//*UNTUK GANTI BACKGROUND BERDASARKAN WAKTU*/}
         useEffect(()=>{
             let greeting = document.querySelector(".greeting");

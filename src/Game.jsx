@@ -180,7 +180,7 @@ function Game(props) {
                     </div>
                 </div>
 
-                <img id='char' src={Images[0].normal[0].url} />
+                <img id='char' src={Images[0].normal[props.character].url} />
 
                 {/* src={Images[0].normal[props.character].url} */}
 

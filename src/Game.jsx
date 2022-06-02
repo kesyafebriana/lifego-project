@@ -189,7 +189,7 @@ function Game(props) {
                 <h1 className="weatherStyle">{temp}&#176;C</h1>
                 <img className="weatherBg" src={WeatherBg} />
                 </div>
-                
+                <Link to='./Rapot'><Button>rapot</Button></Link>
             </div>
         </>
     )

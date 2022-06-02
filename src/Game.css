@@ -63,6 +63,22 @@ body {
     outline: 6px solid #F3ECD9;
 }
 
+.weatherStyle {
+    font-size: 40px;
+    font-weight: 500;
+    color: #F3ECD9;
+    z-index: 2;
+    margin-left: 45px;
+    padding-top: 5px;
+}
+
+.weatherCs {position: relative;}
+.weatherCs > img, .weatherStyle {position: absolute;}
+
+.weatherBg {
+    width: 170px;
+}
+
 .buttonGame {
     height: 72px;
     width: 175px;

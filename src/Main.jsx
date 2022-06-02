@@ -7,6 +7,7 @@ import {
 import App from "./App";
 import Game from "./Game";
 import './App.css';
+import './Game.css';
 
 export default function Main() {
     const [major, setMajor] = useState("");

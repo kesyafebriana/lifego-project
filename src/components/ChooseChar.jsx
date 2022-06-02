@@ -3,7 +3,7 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import Images from './Images';
 
 export default function ChooseChar({ slides, character }) {
-    const [current, setCurrent] = useState(null);
+    const [current, setCurrent] = useState(0);
     const length = slides.length;
 
     useEffect(() => {

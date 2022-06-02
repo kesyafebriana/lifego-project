@@ -166,6 +166,14 @@ body {
     position: relative;
 }
 
+.matkul {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .setBtn {
     margin-top: 95px;
     margin-left: 130px;

@@ -46,7 +46,7 @@ function App(props) {
                 <InputMajor majorget={props.major} />
             </div>
             <div className="logoStart">
-                <Link to="/Game"><Button item="START" /></Link>
+                <Link to="/Game"><Button item="Start" /></Link>
             </div>
         </>
     );

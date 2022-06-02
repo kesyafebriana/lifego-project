@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Time from "./components/Time";
 import Bar from "./components/Bar";
 import BtnBar from './components/BtnBar';
+import MobileNews from "./components/MobileNews";
 import './Game.css';
 import Images from './components/Images';
 import { Link } from 'react-router-dom';
@@ -9,9 +10,11 @@ import Button from "./components/button";
 import News from "./components/News";
 import BtnGame from "./components/BtnGame";
 import WeatherBg from "./assets/weather.png";
+import BGSiang from "./assets/siangUMN.png";
+import BGPagi from "./assets/pagiUMN.png";
+import BGMalam from "./assets/malamUMN.png";
 
 const WEATHER_API="https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
-const NEWS_API="https://newsapi.org/v2/top-headlines?country=us&apiKey=f4fed20443dc4cbdb40befd9f68c3587";
 
 function Game(props) {
     const [eat, setEat] = useState(0);
@@ -24,6 +27,7 @@ function Game(props) {
     const [temp, setTemp] = useState();
     const [tempat,setTempat] = useState(1);
     const [place,setPlace] = useState("@Home");
+    const [time, setTime] = useState("");
 
     function handleEat() {
         setEat(eat + 20);
@@ -78,12 +82,32 @@ function Game(props) {
         });
     },[]);
 
-    // const tes = () => {
-        
-    // };
+      {//*UNTUK GANTI BACKGROUND BERDASARKAN WAKTU*/}
+        useEffect(()=>{
+            let greeting = document.querySelector(".greeting");
+            greeting = greeting.innerHTML;
+            greeting = greeting.split(",");
+            greeting = greeting[0];
+    
+            /*
+                Greeting itu antara
+                    Good Morning
+                    Good Afternoon
+                    Good Evening
+                    Good Night
+            */
+    
+            setTime(greeting);
+        },[])}
 
     return (
         <>
+            <MobileNews />
+            {time == "Good Morning" ? <img src={BGPagi} className="background-image"/> : ""}
+            {time == "Good Afternoon" ? <img src={BGSiang} className="background-image"/> : ""}
+            {time == "Good Evening" ? <img src={BGSiang} className="background-image"/> : ""}
+            {time == "Good Night" ? <img src={BGMalam} className="background-image"/> : ""}
+
             <Time name={props.name}/>
             <div className="weatherCs">
                 <h1 className="weatherStyle">{temp}&#176;C</h1>

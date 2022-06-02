@@ -14,6 +14,7 @@ import GameGuide from './components/GameGuide';
 import AboutUs from "./components/AboutUs";
 import AboutUsBackground from "./assets/aboutUs.png";
 import { Link } from 'react-router-dom';
+import MobileNews from "./components/MobileNews";
 
 function App(props) {
     const [isOpen, setIsOpen] = useState(false);

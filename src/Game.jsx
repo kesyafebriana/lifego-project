@@ -74,7 +74,6 @@ function Game(props) {
         });
     },[]);
 
-      {//*UNTUK GANTI BACKGROUND BERDASARKAN WAKTU*/}
         useEffect(()=>{
             let greeting = document.querySelector(".greeting");
             greeting = greeting.innerHTML;
@@ -90,7 +89,7 @@ function Game(props) {
             */
     
             setTime(greeting);
-        },[])}
+        },[]);
 
     return (
         <>
@@ -101,10 +100,10 @@ function Game(props) {
             {time == "Good Night" ? <img src={BGMalam} className="background-image"/> : ""}
 
             <Time name={props.name}/>
-            <div className="weatherCs">
+            {/* <div className="weatherCs">
                 <h1 className="weatherStyle">{temp}&#176;C</h1>
                 <img className = "weatherBg" src={WeatherBg}/>
-            </div>
+            </div> */}
             {/* <h1>ini major {props.major}</h1>
             <img src={Images[props.character].url} />  */}
             {/* <div id='setBar' className='row mt-lg-5'>
@@ -122,7 +121,7 @@ function Game(props) {
                 <BtnBar name="Sleep" onClick={handleSleep}/>
                 <BtnBar name="Play" onClick={handlePlay}/>
             </div> */}
-            <h1>{place}</h1>
+            {/* <h1>{place}</h1>
             {(tempat === 1)? 
             <div>
                 <BtnBar name="Campus" onClick={handleCampus}/>
@@ -179,7 +178,7 @@ function Game(props) {
                 <BtnBar name="Study" onClick={handleStudy}/>
                 <BtnBar name="Chitchat" onClick={handlePlay}/>
             </div> : ""
-            }
+            } */}
         </>
     );
 }

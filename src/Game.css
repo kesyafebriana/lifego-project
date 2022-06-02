@@ -6,7 +6,7 @@ body {
     height: 1080px;
     background-repeat: no-repeat;
     background-size: contain;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .mobile-container {
@@ -109,8 +109,6 @@ body {
     border-radius: 25px;
     border: 6px solid #A1AD53;
     outline: 6px solid #F3ECD9;
-<<<<<<< Updated upstream
-=======
 }
 
 .weatherStyle {
@@ -195,5 +193,4 @@ body {
 				  1px -1px 0 #ffffff,
 				  -1px -1px 0 #ffffff,
                   1.4px 3.5px 5px #00000073;
->>>>>>> Stashed changes
 }

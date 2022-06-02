@@ -28,7 +28,7 @@ function App(props) {
     }
 
     return (
-        <>
+        <div id='landingPage'>
             <div className="gameGuideButton">
                 <PopUpButton pict={QMark} handleClick={togglePopup} />
                 {isOpen && <GameGuide closeButton={CloseButton} pict={GameGuideBackground} handleClose={togglePopup} />}
@@ -48,7 +48,7 @@ function App(props) {
             <div className="logoStart">
                 <Link to="/Game"><Button item="Start" /></Link>
             </div>
-        </>
+        </div>
     );
 }
 

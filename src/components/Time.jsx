@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DisplayTime from "./DisplayTime";
 import BtnPauseResume from "./BtnPauseResume";
 
-function Time(props) {
+function Time(props, {getTimebella}) {
   const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
@@ -10,6 +10,10 @@ function Time(props) {
   // Not started = 0
   // started = 1
   // stopped = 2
+
+  useEffect (() => {
+    getTimebella(time);
+  }, [time])
 
   const start = () => {
     run();

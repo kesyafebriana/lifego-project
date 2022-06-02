@@ -2,11 +2,19 @@
 
 body {
     font-family: "Akshar", sans-serif;
-    background-image: url("bg.png");
+    background-image: url("assets/bgLP.png");
     height: 1080px;
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     overflow: hidden;
+    overflow:scroll;
+    position: relative;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 150px;
 }
 
 .normalButton {
@@ -24,13 +32,27 @@ body {
 }
 
 .normalButton:hover {
-    text-shadow: 2px 2px #6b6b6b;;
+    outline: 6px solid #F3ECD9;
+    text-shadow: 2px 2px #6b6b6b;
     box-shadow: 5px 5px 2px 5px #6b6b6b;
 }
 
+.logoStart {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.aboutUsButton {
+    margin-right: 70px;
+}
+
 .popUp {
-    height: 30px;
-    width: 30px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 18px;
+    align-items: right;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     background-color: #C5D272;
     border: 3px solid #A1AD53;
@@ -56,12 +78,13 @@ body {
     top: 0;
     left: 0;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-  }
-   
-  .box {
+    z-index: 2;
+}
+
+.box {
     position: relative;
     width: 70%;
     margin: 0 auto;
@@ -73,111 +96,111 @@ body {
     padding: 20px;
     border: 1px solid #999;
     overflow: auto;
-  }
+}
 
-  .popup-description {
-      position: absolute;
-      top: 20%;
-      max-height: 65%;
-      width: 70%;
-      margin-bottom: 20px;
-      font-family: "Akshar", sans-serif;
-      font-size: larger;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 13px;
-      text-align: justify;
-      padding-right: 13px;
-      z-index:2;
-      line-height: 1.5;
-  }
-
-  .popup-container {
-      width: 90%;
-      position:relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .popup-background {
-      width: 100%;
-      z-index:1;
-  }
-
-  .close-button {
-      aspect-ratio: 1;
-      width: 5.1%;
-      border-radius: 50%;
-      position: absolute;
-      top: 0.9%;
-      right: 5.4%;
-      z-index: 100;
-      cursor: pointer;
-      opacity: 0;
-      transition: .3s;
-      outline: none;
-      border: none;
-  }
-
-  .aboutus-description {
+.popup-description {
     position: absolute;
-    top: 0;
+    top: 23%;
     max-height: 65%;
     width: 70%;
+    margin-bottom: 20px;
     font-family: "Akshar", sans-serif;
-    font-size: larger;
-    padding-left: 13px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 120px;
     text-align: justify;
     padding-right: 13px;
-    z-index:2;
+    z-index: 2;
+    line-height: 2.5;
+    margin-top: -25px;
+    margin-right: 100px;
+}
+
+.popup-container {
+    width: 90%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-background {
+    width: 100%;
+    z-index: 1;
+}
+
+.close-button {
+    aspect-ratio: 1;
+    width: 5.1%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.9%;
+    right: 5.4%;
+    z-index: 100;
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s;
+    outline: none;
+    border: none;
+}
+
+.aboutus-description {
+    position: absolute;
+    top: 7;
+    max-height: 65%;
+    width: 100%;
+    font-family: "Akshar", sans-serif;
+    font-size: larger;
+    padding-left: 33px;
+    z-index: 2;
     line-height: 1.2;
-  }
+    margin-right: -55px;
+    margin-top: -190px;
+}
 
 .au1 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 10px;
+    padding-left: 120px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
-    padding-top: 110px;
+    padding-top: 100px;
     align-items: center;
 }
 
 .au2 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 445px;
+    padding-left: 643px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
     align-items: center;
-    margin-top: -30px;
+    margin-top: -60px;
 }
-
-
 
 .au3 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 10px;
+    padding-left: 110px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
     align-items: center;
-    margin-top: -20px;
+    margin-top: 30px;
 }
 
 .au4 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 430px;
+    padding-left: 630px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
     align-items: center;
-    margin-top: -25px;
+    margin-top: -35px;
 }
 
 .descriptionkanan {
@@ -197,4 +220,85 @@ body {
 
 .buibu {
     width: 120px;
+}
+
+/* bella */
+
+#inputName {
+    color: #F3ECD9;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding-left: 17px;
+    width: 350px;
+    height: 37px;
+    border-radius: 15px;
+    background-color: #C5D272;
+    border: 3px solid #A1AD53;
+    outline: 5px solid #F3ECD9;
+    box-shadow: 3px 3px 2px 2px #a7a7a7;
+    margin-top: 20px;
+}
+
+::placeholder {
+    color: #F3ECD9;
+}
+
+#inputMajor {
+    margin-top: 20px;
+    color: #F3ECD9;
+    background-color: #C5D272;
+    border: 3px solid #A1AD53;
+    outline: 5px solid #F3ECD9;
+    width: 350px;
+    height: 36px;
+    font-family: "Akshar", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px 2px #a7a7a7;
+}
+
+#inputMajorBtn {
+    background-color: #A1AD53;
+    border-radius: 10px;
+    border: #A1AD53;
+    height: 34px;
+    margin-right: -13px;
+    margin-top: -98px;
+}
+
+.slider {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.img {
+    height: 275px;
+    border-radius: 10px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    color: #000;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    color: #000;
+}
+
+.slide {
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
 }

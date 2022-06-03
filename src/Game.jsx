@@ -185,8 +185,7 @@ function Game(props) {
         if (tempat === 4 || tempat===3){
             if(uangJajan > 0){
             setUangJajan(uangJajan-10000);
-            
-            console.log("yampun" + uangjajanget);
+        
             }
         }
     }

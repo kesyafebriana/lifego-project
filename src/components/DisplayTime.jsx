@@ -37,6 +37,9 @@ function DisplayTime(props) {
   }
   return (
     <div>
+       <div className="row">
+         <h3 className="moneyJiggleJiggle">Ⓖ{props.uangJajan}</h3>
+       </div>
        <h3 className="timeClock">{h()} - {(props.time.m >= 10)? props.time.m : "0"+ props.time.m}:{(props.time.s >= 10)? props.time.s : "0"+ props.time.s}</h3>
        <h1 className="greeting">{greeting()}</h1>
     </div>

@@ -62,7 +62,7 @@ function Time(props) {
         <BtnPauseResume status={status} resume={resume} stop={stop} />
       </div> */}
       <div className="time col">
-        <DisplayTime name={props.name} time={time} />
+        <DisplayTime name={props.name} time={time} uangJajan={props.uangJajan} />
       </div>
     </>
   );

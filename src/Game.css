@@ -174,6 +174,44 @@ body {
     outline: 6px solid #F3ECD9;
 }
 
+#soloBar img {
+    width: 10px;
+}
+
+.bgImg {
+    width: 420px;
+    height: 430px;
+    margin-left: 85px;
+    margin-top: -220px;
+    background-image: url(./assets/ingameboard.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.matkul {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.setBtn {
+    margin-top: 95px;
+    margin-left: 130px;
+}
+
+#barBtn {
+    margin-top: 35px;
+    width: 180px;
+}
+
+#bgImgTwo {
+    margin-top: 240px;
+    margin-left: -420px;
+}
+
 .time {
     margin-top: 110px;
 }

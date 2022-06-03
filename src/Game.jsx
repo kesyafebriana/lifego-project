@@ -10,7 +10,12 @@ import Button from "./components/button";
 import News from "./components/News";
 import BtnGame from "./components/BtnGame";
 import WeatherBg from "./assets/weather.png";
-import BG1 from "./assets/bg1.png";
+import BG1Malam from "./assets/bg1malam.png";
+import BG1MalamHujan from "./assets/bg1malamhujan.png";
+import BG1Pagi from "./assets/bg1pagi.png";
+import BG1PagiHujan from "./assets/bg1pagihujan.png";
+import BG1SiangSore from "./assets/bg1sore.png";
+import BG1SiangHujan from "./assets/bg1sorehujan.png";
 import BG2Malam from "./assets/bg2malam.png";
 import BG2MalamHujan from "./assets/bg2malamhujan.png";
 import BG2Pagi from "./assets/bg2pagi.png";
@@ -19,6 +24,11 @@ import BG2SiangSore from "./assets/bg2siangsore.png";
 import BG2SiangHujan from "./assets/bg2sianghujan.png";
 import BG3 from "./assets/bg3.png";
 import BG4 from "./assets/bg4.png";
+import BG6 from "./assets/bg6.png";
+import BG7 from "./assets/bg7.png";
+import BG8 from "./assets/bg8.png";
+import BG9 from "./assets/bg9.png";
+import BG10 from "./assets/bg10.png";
 import Rapot from './Rapot';
 import Majors from './components/Majors';
 
@@ -122,15 +132,20 @@ function Game(props) {
     const [bg, setBg] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
+    const [uangJajan, setUangJajan] = useState(500000);
 
     function handleEat() {
         setEat(eat + 10);
         setSleep(sleep - 5);
         SetActionChar(Images[2].makan[props.character].url);
 
-        if (tempat == 2) {
+        if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
+        }
+
+        if (tempat === 4 || tempat===3){
+            setUangJajan(uangJajan-10000);
         }
     }
 
@@ -344,6 +359,10 @@ function Game(props) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
         }
+
+        if (tempat === 4 || tempat===3){
+            setUangJajan(uangJajan-5000);
+        }
     }
 
     function handleChat() {
@@ -428,7 +447,7 @@ function Game(props) {
             .then((data) => {
                 setTemp(Math.round(data.main.temp / 10));
                 setWeather(data.weather[0].main);
-                console.log(weather);
+                console.log("weather" + weather);
             });
     },[]);
 
@@ -473,16 +492,18 @@ function Game(props) {
         setJurusan(localStorage.getItem("jurusan"));
         setHari(hari);
         console.log(localStorage.getItem("jurusan"));
-    }, [])
+    }, [timeK.h])
 
     useEffect(()=> {
-        let waktu = document.querySelector(".timeClock");
-        waktu = waktu.innerHTML;
-        waktu = waktu.split(" - ");
-        waktu = waktu[1]
+        // let waktu = document.querySelector(".timeClock");
+        // waktu = waktu.innerHTML;
+        // waktu = waktu.split(" - ");
+        // waktu = waktu[1]
+
+        let waktu = timeK.m;
 
         setWaktu(waktu);
-        console.log(waktu);
+        console.log("waktu" + waktu);
         setPlay(play - 10);
         setSleep(sleep - 10);
         setStudy(study - 10);
@@ -493,15 +514,24 @@ function Game(props) {
         <div id='gamepage'>
             <MobileNews />
             <div className='row'>
-                
-                {/* Kuliah (Ada indikator cuaca) */}
-                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2PagiHujan} className="background-image" /> : ""}
-                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangHujan} className="background-image" /> : ""}
-                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2MalamHujan} className="background-image" /> : ""}
 
-                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
-                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangSore} className="background-image" /> : ""}
-                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2Malam} className="background-image" /> : ""}
+                {/* Kuliah (Ada indikator cuaca) */}
+                {(tempat === 2 || tempat === 5) && (waktu >= 5 && waktu <= 11) ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
+                {(tempat === 2 || tempat === 5) && (waktu > 11 && waktu <= 19) ? <img alt=' ' src={BG2SiangSore} className="background-image" /> : ""}
+                {(tempat === 2 || tempat === 5 )&& ((waktu > 19 && waktu <= 24) || (waktu >= 0 && waktu <5))? <img alt=' ' src={BG2Malam} className="background-image" /> : ""}
+
+                {weather === "rain" && (tempat === 2 || tempat === 5) && (waktu >= 5 && waktu <= 11) ? <img alt=' ' src={BG2PagiHujan} className="background-image" /> : ""}
+                {weather === "rain" && (tempat === 2 || tempat === 5 )&& (waktu > 11 && waktu <= 19) ? <img alt=' ' src={BG2SiangHujan} className="background-image" /> : ""}
+                {weather === "rain" && (tempat === 2 || tempat === 5) && ((waktu > 19 && waktu <= 24) || (waktu >= 0 && waktu <5)) ? <img alt=' ' src={BG2MalamHujan} className="background-image" /> : ""}
+
+                {/* Luar Rumah (Ada indikator cuaca) */}
+                {tempat === 1 && weather !== "rain" && (waktu >= 5 && waktu <= 11)? <img alt=' ' src={BG1Pagi} className="background-image" /> : ""}
+                {tempat === 1 && weather !== "rain" && (waktu > 11 && waktu <= 19) ? <img alt=' ' src={BG1SiangSore} className="background-image" /> : ""}
+                {tempat === 1 && weather !== "rain" && ((waktu > 19 && waktu <= 24) || (waktu >= 0 && waktu <5))? <img alt=' ' src={BG1Malam} className="background-image" /> : ""}
+
+                {weather === "rain" && tempat === 1 && (waktu >= 5 && waktu <= 11) ? <img alt=' ' src={BG1PagiHujan} className="background-image" /> : ""}
+                {weather === "rain" && tempat === 1 && (waktu > 11 && waktu <= 19) ? <img alt=' ' src={BG1SiangHujan} className="background-image" /> : ""}
+                {weather === "rain" && tempat === 1 && ((waktu > 19 && waktu <= 24) || (waktu >= 0 && waktu <5))? <img alt=' ' src={BG1MalamHujan} className="background-image" /> : ""}
 
                 {/* Libro Cafe (Tidak ada indikator cuaca & waktu) */}
                 {tempat === 3 ? <img alt=' ' src={BG3} className="background-image" /> : ""}
@@ -509,8 +539,12 @@ function Game(props) {
                 {/* Lawsen (Tidak ada indikator cuaca & waktu) */}
                 {tempat === 4 ? <img alt=' ' src={BG4} className="background-image" /> : ""}
 
-                {/* Rumah (Cuma jam aja karena tidak ada indikator cuaca dan waktu) */}
-                {(tempat === 1 || tempat === 6 || tempat === 9 || tempat === 10) ? <img alt=' ' src={BG1} className="background-image" /> : ""}
+                {/* Dalem Rumah (Cuma jam aja karena tidak ada indikator cuaca dan waktu) */}
+                {tempat === 6 ? <img alt=' ' src={BG6} className="background-image" /> : ""}
+                {tempat === 7 ? <img alt=' ' src={BG7} className="background-image" /> : ""}
+                {tempat === 8 ? <img alt=' ' src={BG8} className="background-image" /> : ""}
+                {tempat === 9 ? <img alt=' ' src={BG9} className="background-image" /> : ""}
+                {tempat === 10 ? <img alt=' ' src={BG10} className="background-image" /> : ""}
 
                 <div id='setBar' className='row'>
                     <div className='col'></div>
@@ -711,7 +745,7 @@ function Game(props) {
                             </div>
                         </div>
                     </div>
-                    <Time name={props.name} />
+                    <Time name={props.name} uangJajan={uangJajan}/>
                     <div className='col'></div>
                 </div>
 

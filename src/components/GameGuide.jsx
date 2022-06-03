@@ -10,9 +10,9 @@ const GameGuide = props => {
           <br/>2. Terdapat 4 lokasi yang bisa dipilih pemain ketika bermain permainan lifeGo, yaitu cafe, kampus, supermarket, dan rumah.
           <br/>3. Saat berada di cafe, pemain bisa makan, minum, dan ngobrol.
           <br/>4. Saat berada di kampus, pemain bisa makan, belajar, dan bermain.
-          <br/>5. Saat berada di supermarket, pemain bisa minum, belanja, dan bayar (optional).
+          <br/>5. Saat berada di supermarket, pemain bisa belajar, ngobrol, dan makan.
           <br/>6. Saat berada di rumah, pemain bisa makan, tidur, dan masak.
-          <br/>7. Ekspresi karakter akan berubah sesuai dengan kegiatan yang pemain pilih.
+          <br/>7. Saat berada di cafe dan supermarket, kegiatan makan dan minum akan mengurangi Goins (coin dalam game).
           <br/>8. Background akan berubah sesuai dengan tempat dan cuaca saat pemain memainkan game lifeGo.
           <br/>9. Setelah 7 hari bermain, lifeGo akan memberikan evaluasi dalam bentuk rapor yang menyimpulkan kegiatan selama 7 hari tersebut.
           <br/>10. Message terhadap pemain di page evaluasi tergantung kegiatannya selama 7 hari.

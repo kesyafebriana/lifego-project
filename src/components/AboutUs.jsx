@@ -15,9 +15,7 @@ const AboutUs = (props) => {
         <img src={props.pict} className="popup-background" />
         <div className="aboutus-description">
           <div className="au1">
-            <div>
-              <img src={bella} className="buibu"></img>
-            </div>
+            <img src={bella} className="buibu"/>
             <div className="description">
               Bella Saharani Sopyan
               <br /> Fullstack Developer
@@ -30,14 +28,10 @@ const AboutUs = (props) => {
               <br /> Senior Web Developer
               <br /> 00000064613 <br />
             </div>
-            <div>
-              <img src={kelsha} className="buibu"></img>
-            </div>
+            <img src={kelsha} className="buibu"/>
           </div>
           <div className="au3">
-            <div>
-              <img src={kesya} className="buibu"></img>
-            </div>
+            <img src={kesya} className="buibu"/>
             <div className="descriptionkesya">
               Kesya Febriana Manampiring
               <br /> UI/UX Designer
@@ -50,9 +44,7 @@ const AboutUs = (props) => {
               <br /> Quality Assurance
               <br /> 00000063592 <br />
             </div>
-            <div>
-              <img src={yustira} className="buibu"></img>
-            </div>
+            <img src={yustira} className="buibu"/>
           </div>
         </div>
         <img src={props.closeButton} className="close-button" onClick={close} />

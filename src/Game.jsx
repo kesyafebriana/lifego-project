@@ -27,80 +27,85 @@ import informatikaSelasa from "./assets/matkul/Informatika/informatikaSelasa.png
 import informatikaRabu from "./assets/matkul/Informatika/informatikaRabu.png";
 import informatikaKamis from "./assets/matkul/Informatika/informatikaSenin.png";
 import informatikaJumat from "./assets/matkul/Informatika/informatikaSelasa.png";
-import informatikaSabtu from "./assets/matkul/sabtuMinggu.png";
-import informatikaMinggu from "./assets/matkul/sabtuMinggu.png";
+import informatikaSabtu from "./assets/matkul/sabtu.png";
+import informatikaMinggu from "./assets/matkul/gakuliah.png";
 
 import akuntansiSenin from "./assets/matkul/Akuntansi/akuntansiSenin.png";
 import akuntansiSelasa from "./assets/matkul/Akuntansi/akuntansiSelasa.png";
 import akuntansiRabu from "./assets/matkul/Akuntansi/akuntansiRabu.png";
 import akuntansiKamis from "./assets/matkul/Akuntansi/akuntansiSenin.png";
 import akuntansiJumat from "./assets/matkul/Akuntansi/akuntansiSelasa.png";
-import akuntansiSabtu from "./assets/matkul/sabtuMinggu.png";
-import akuntansiMinggu from "./assets/matkul/sabtuMinggu.png";
+import akuntansiSabtu from "./assets/matkul/sabtu.png";
+import akuntansiMinggu from "./assets/matkul/gakuliah.png";
 
 import arsitekturSenin from "./assets/matkul/Arsitektur/arsitekturSenin.png";
 import arsitekturSelasa from "./assets/matkul/Arsitektur/arsitekturSelasa.png";
 import arsitekturRabu from "./assets/matkul/Arsitektur/arsitekturRabu.png";
 import arsitekturKamis from "./assets/matkul/Arsitektur/arsitekturSenin.png";
 import arsitekturJumat from "./assets/matkul/Arsitektur/arsitekturSelasa.png";
-import arsitekturSabtu from "./assets/matkul/sabtuMinggu.png";
-import arsitekturMinggu from "./assets/matkul/sabtuMinggu.png";
+import arsitekturSabtu from "./assets/matkul/sabtu.png";
+import arsitekturMinggu from "./assets/matkul/gakuliah.png";
 
 import DKVSenin from "./assets/matkul/DKV/DKVSenin.png";
 import DKVSelasa from "./assets/matkul/DKV/DKVSelasa.png";
 import DKVRabu from "./assets/matkul/DKV/DKVRabu.png";
 import DKVKamis from "./assets/matkul/DKV/DKVSenin.png";
 import DKVJumat from "./assets/matkul/DKV/DKVSelasa.png";
-import DKVSabtu from "./assets/matkul/sabtuMinggu.png";
-import DKVMinggu from "./assets/matkul/sabtuMinggu.png";
+import DKVSabtu from "./assets/matkul/sabtu.png";
+import DKVMinggu from "./assets/matkul/gakuliah.png";
 
 import filmSenin from "./assets/matkul/Film/filmSenin.png";
 import filmSelasa from "./assets/matkul/Film/filmSelasa.png";
 import filmRabu from "./assets/matkul/Film/filmRabu.png";
 import filmKamis from "./assets/matkul/Film/filmSenin.png";
 import filmJumat from "./assets/matkul/Film/filmSelasa.png";
-import filmSabtu from "./assets/matkul/sabtuMinggu.png";
-import filmMinggu from "./assets/matkul/sabtuMinggu.png";
+import filmSabtu from "./assets/matkul/sabtu.png";
+import filmMinggu from "./assets/matkul/gakuliah.png";
 
 import jurnalistikSenin from "./assets/matkul/Jurnalistik/jurnalistikSenin.png";
 import jurnalistikSelasa from "./assets/matkul/Jurnalistik/jurnalistikSelasa.png";
 import jurnalistikRabu from "./assets/matkul/Jurnalistik/jurnalistikRabu.png";
 import jurnalistikKamis from "./assets/matkul/Jurnalistik/jurnalistikSenin.png";
 import jurnalistikJumat from "./assets/matkul/Jurnalistik/jurnalistikSelasa.png";
-import jurnalistikSabtu from "./assets/matkul/sabtuMinggu.png";
-import jurnalistikMinggu from "./assets/matkul/sabtuMinggu.png";
+import jurnalistikSabtu from "./assets/matkul/sabtu.png";
+import jurnalistikMinggu from "./assets/matkul/gakuliah.png";
 
 import managemenSenin from "./assets/matkul/Managemen/managemenSenin.png";
 import managemenSelasa from "./assets/matkul/Managemen/managemenSelasa.png";
 import managemenRabu from "./assets/matkul/Managemen/managemenRabu.png";
 import managemenKamis from "./assets/matkul/Managemen/managemenSenin.png";
 import managemenJumat from "./assets/matkul/Managemen/managemenSelasa.png";
-import managemenSabtu from "./assets/matkul/sabtuMinggu.png";
-import managemenMinggu from "./assets/matkul/sabtuMinggu.png";
+import managemenSabtu from "./assets/matkul/sabtu.png";
+import managemenMinggu from "./assets/matkul/gakuliah.png";
 
 import SISenin from "./assets/matkul/SI/SISenin.png";
 import SISelasa from "./assets/matkul/SI/SISelasa.png";
 import SIRabu from "./assets/matkul/SI/SIRabu.png";
 import SIKamis from "./assets/matkul/SI/SISenin.png";
 import SIJumat from "./assets/matkul/SI/SISelasa.png";
-import SISabtu from "./assets/matkul/sabtuMinggu.png";
-import SIMinggu from "./assets/matkul/sabtuMinggu.png";
+import SISabtu from "./assets/matkul/sabtu.png";
+import SIMinggu from "./assets/matkul/gakuliah.png";
 
 import teknikElektroSenin from "./assets/matkul/TeknikElektro/teknikElektroSenin.png";
 import teknikElektroSelasa from "./assets/matkul/TeknikElektro/teknikElektroSelasa.png";
 import teknikElektroRabu from "./assets/matkul/TeknikElektro/teknikElektroRabu.png";
 import teknikElektroKamis from "./assets/matkul/TeknikElektro/teknikElektroSenin.png";
 import teknikElektroJumat from "./assets/matkul/TeknikElektro/teknikElektroSelasa.png";
-import teknikElektroSabtu from "./assets/matkul/sabtuMinggu.png";
-import teknikElektroMinggu from "./assets/matkul/sabtuMinggu.png";
+import teknikElektroSabtu from "./assets/matkul/sabtu.png";
+import teknikElektroMinggu from "./assets/matkul/gakuliah.png";
 
 import teknikKomputerSenin from "./assets/matkul/TeknikKomputer/teknikKomputerSenin.png";
 import teknikKomputerSelasa from "./assets/matkul/TeknikKomputer/teknikKomputerSelasa.png";
 import teknikKomputerRabu from "./assets/matkul/TeknikKomputer/teknikKomputerRabu.png";
 import teknikKomputerKamis from "./assets/matkul/TeknikKomputer/teknikKomputerSenin.png";
 import teknikKomputerJumat from "./assets/matkul/TeknikKomputer/teknikKomputerSelasa.png";
-import teknikKomputerSabtu from "./assets/matkul/sabtuMinggu.png";
-import teknikKomputerMinggu from "./assets/matkul/sabtuMinggu.png";
+import teknikKomputerSabtu from "./assets/matkul/sabtu.png";
+import teknikKomputerMinggu from "./assets/matkul/gakuliah.png";
+
+import gakuliah from "./assets/matkul/gakuliah.png";
+import AlertPopupEat from './components/AlertPopupEat';
+import AlertPopupSleep from './components/AlertPopupSleep';
+import AlertPopupPlay from './components/AlertPopupPlay';
 
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
 
@@ -123,6 +128,19 @@ function Game(props) {
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
     const [icon, setIcon] = useState("");
+    const [timeKel, SetTimeKel] = useState("");
+    const [isOpenEat, setIsOpenEat] = useState(false);
+    const [isOpenSleep, setIsOpenSleep] = useState(false);
+    const [isOpenPlay, setIsOpenPlay] = useState(false);
+    const togglePopupEat = () => {
+        setIsOpenEat(!isOpenEat);
+    }
+    const togglePopupSleep = () => {
+        setIsOpenSleep(!isOpenSleep);
+    }
+    const togglePopupPlay = () => {
+        setIsOpenPlay(!isOpenPlay);
+    }
 
     function handleEat() {
         setEat(eat + 10);
@@ -145,22 +163,23 @@ function Game(props) {
             let img = document.querySelector(".matkul");
             img.style.display = "inline-block";
 
-            //AKUNTANSI
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiSenin }.akuntansiSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiSelasa }.akuntansiSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiRabu }.akuntansiRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiKamis }.akuntansiKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiJumat }.akuntansiJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiSabtu }.akuntansiSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Akuntansi") {
-                img.src = { akuntansiMinggu }.akuntansiMinggu;
-            }
+            //Akuntasi
+            if (timeKel >= 8 && timeKel <= 17 ){
+                if (hari === "Senin" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiSenin }.akuntansiSenin;
+                } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiSelasa }.akuntansiSelasa;
+                } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiRabu }.akuntansiRabu;
+                } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiKamis }.akuntansiKamis;
+                } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiJumat }.akuntansiJumat;
+                } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiSabtu }.akuntansiSabtu;
+                } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                    img.src = { akuntansiMinggu }.akuntansiMinggu;
+                }
 
             //Arsitektur
             if (hari === "Senin" && localStorage.getItem("jurusan") === "Arsitektur") {
@@ -316,7 +335,11 @@ function Game(props) {
                 img.src = { teknikKomputerMinggu }.teknikKomputerMinggu;
             }
         }
+        else {
+            img.src = {gakuliah}.gakuliah;
+        }
     }
+}
 
     function handleSleep() {
         setSleep(sleep + 10);
@@ -524,6 +547,22 @@ function Game(props) {
         waktu = waktu.split(" - ");
         waktu = waktu[1]
 
+        let timeKel = waktu;
+        timeKel = timeKel.split(":");
+
+        if (timeKel[1] === "59") {
+            timeKel [0] = parseInt(timeKel[0]);
+            timeKel[0]++
+        }
+        else {
+            timeKel [0] = parseInt(timeKel[0]);
+        }
+
+        timeKel = timeKel[0]
+
+        SetTimeKel(timeKel);
+        console.log(timeKel);
+
         setWaktu(waktu);
         console.log(waktu);
         setPlay(play - 10);
@@ -532,8 +571,44 @@ function Game(props) {
         setEat(eat - 10);
     },[timeK.m])
 
+    useEffect (()=> {
+        if (eat <= 0) {
+            togglePopupEat();
+            setTimeout(() => {
+            setIsOpenEat(false)
+            }, 1000*3);
+        }
+        if (sleep <= 0) {
+            togglePopupSleep();
+            setTimeout(() => {
+            setIsOpenSleep(false)
+            }, 1000*3);
+        }
+        if (play <= 0) {
+            togglePopupPlay();
+            setTimeout(() => {
+            setIsOpenPlay(false)
+            }, 1000*3);
+        }
+    },[eat,sleep,play])
+
+
+    // function alertPopup() {
+    //     console.log(eat);
+    //     if (eat <= 0) {
+    //         togglePopup();
+    //         setTimeout(() => {
+    //             setIsOpen(false)
+    //         }, 1000*3);
+    //     }
+    // }
+
     return (
         <div id='gamepage'>
+            {isOpenEat && <AlertPopupEat pict={gakuliah}/>}
+            {isOpenSleep && <AlertPopupSleep pict={gakuliah}/>}
+            {isOpenPlay && <AlertPopupPlay pict={gakuliah}/>}
+
             <MobileNews />
             <div className='row'>
                 

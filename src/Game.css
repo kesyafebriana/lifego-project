@@ -146,18 +146,26 @@ body {
     font-weight: 500;
     color: #F3ECD9;
     z-index: 2;
-    margin-left: 55px;
+    margin-left: 85px;
     padding-top: 15px;
 }
 
 .weatherCs {
     position: relative;
     margin-left: 970px;
-    margin-top: -85px;
+    margin-top: -75px;
 }
+
 .weatherCs > img, .weatherStyle {
     position: absolute;
     width: 190px;
+}
+
+#logoweather {
+    z-index: 3;
+    width: 70px;
+    margin-top: 7px;
+    margin-left: 40px;
 }
 
 .buttonGame {
@@ -207,9 +215,9 @@ body {
 }
 
 .greeting {
-    font-size: 40px;
+    font-size: 35px;
     margin-top: 10px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     text-shadow: -1px 1px 0px #ffffff,
 				  1px 1px 0px #ffffff,
 				  1px -1px 0 #ffffff,

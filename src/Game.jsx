@@ -422,6 +422,8 @@ function Game(props) {
         console.log(localStorage.getItem("jurusan"));
     }, [])
 
+    console.log(weather);
+
     return (
         <div id='gamepage'>
             <MobileNews />

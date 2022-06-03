@@ -112,13 +112,11 @@ function Game(props) {
     const [time, setTime] = useState("");
     const [hari, setHari] = useState("");
     const [jurusan, setJurusan] = useState("");
-
-    // useEffect(() => {
-    //     console.log(timebella);
-    // }, [timebella]);
+    const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
 
     function handleEat() {
         setEat(eat + 20);
+        SetActionChar(Images[2].makan[props.character].url);
 
         if (tempat == 2) {
             let img = document.querySelector(".matkul");
@@ -128,6 +126,7 @@ function Game(props) {
 
     function handleStudy() {
         setStudy(study + 20);
+        SetActionChar(Images[4].belajar[props.character].url);
 
         if (tempat == 2) { //di kampus & lagi belajar
             let img = document.querySelector(".matkul");
@@ -308,15 +307,27 @@ function Game(props) {
 
     function handleSleep() {
         setSleep(sleep + 20);
+        SetActionChar(Images[5].tidur[props.character].url);
     }
 
     function handlePlay() {
         setPlay(play + 20);
+        SetActionChar(Images[3].game[props.character].url);
 
         if (tempat == 2) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
         }
+    }
+
+    function handleDrink() {
+        setEat(eat + 20);
+        SetActionChar(Images[6].minum[props.character].url);
+    }
+
+    function handleChat() {
+        setPlay(play + 20);
+        SetActionChar(Images[9].ngobrol[props.character].url);
     }
 
     function handleHome() {
@@ -375,6 +386,8 @@ function Game(props) {
         setHari(hari);
         console.log(localStorage.getItem("jurusan"));
     }, [])
+
+    console.log(actionChar);
 
     return (
         <div id='gamepage'>
@@ -450,15 +463,15 @@ function Game(props) {
                                 {(tempat === 3) ?
                                     <div>
                                         <BtnBar name="Eat" onClick={handleEat} />
-                                        <BtnBar name="Drink" onClick={handleEat} />
-                                        <BtnBar name="Chitchat" onClick={handlePlay} />
+                                        <BtnBar name="Drink" onClick={handleDrink} />
+                                        <BtnBar name="Chitchat" onClick={handleChat} />
                                     </div> : ""
                                 }
                                 {(tempat === 4) ?
                                     <div>
                                         <BtnBar name="Eat" onClick={handleEat} />
                                         <BtnBar name="Study" onClick={handleStudy} />
-                                        <BtnBar name="Chitchat" onClick={handlePlay} />
+                                        <BtnBar name="Chitchat" onClick={handleChat} />
                                     </div> : ""
                                 }
                             </div>
@@ -468,7 +481,7 @@ function Game(props) {
                     <div className='col'></div>
                 </div>
 
-                <img id='char' src={Images[0].normal[props.character].url} />
+                <img id='char' src={actionChar} />
 
                 {/* src={Images[0].normal[props.character].url} */}
 

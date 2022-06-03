@@ -5,7 +5,7 @@ import BtnBar from './components/BtnBar';
 import MobileNews from "./components/MobileNews";
 import './Game.css';
 import Images from './components/Images';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from "./components/button";
 import News from "./components/News";
 import BtnGame from "./components/BtnGame";
@@ -124,7 +124,6 @@ import AlertPlay from './assets/alert/alertMain.png';
 import AlertSleep from './assets/alert/alertTidur.png';
 
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
-let cek = 0;
 
 function Game(props) {
     const [eat, setEat] = useState(50);
@@ -171,9 +170,6 @@ function Game(props) {
     }
     const togglePopupPlay = () => {
         setIsOpenPlay(!isOpenPlay);
-    }
-    const togglePopupReport = () => {
-        setIsOpenReport(!isOpenReport);
     }
 
     function handleEat() {
@@ -551,8 +547,6 @@ function Game(props) {
     }, [tempat])
 
     useEffect(() => {
-        cek + 1;
-        console.log("ini cek " + cek);
         fetch(WEATHER_API)
             .then((res) => res.json())
             .then((data) => {
@@ -755,11 +749,6 @@ function Game(props) {
         }
         setStatusLife(1);
         setConditionKesya(true);
-    }
-
-    if (window.location.reload && cek === 2) {
-        return (<Redirect to={App} />);
-        cek = false;
     }
 
     return (

@@ -1,9 +1,5 @@
 const Majors = [
     {
-        value: '(Select)',
-        label: '(Select)'
-    },
-    {
         value: 'Akuntansi',
         label: 'Akuntansi'
     },

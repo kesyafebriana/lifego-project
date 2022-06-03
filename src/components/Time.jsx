@@ -11,10 +11,6 @@ function Time(props) {
   // started = 1
   // stopped = 2
 
-  // useEffect (() => {
-  //   getTimebella(time);
-  // }, [time])
-
   const start = () => {
     run();
     setStatus(1);
@@ -62,9 +58,9 @@ function Time(props) {
 
   return (
     <>
-      <div>
+      {/* <div>
         <BtnPauseResume status={status} resume={resume} stop={stop} />
-      </div>
+      </div> */}
       <div className="time">
         <DisplayTime name={props.name} time={time} />
       </div>

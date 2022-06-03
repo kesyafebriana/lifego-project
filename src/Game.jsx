@@ -134,10 +134,10 @@ function Game(props) {
     const [timeK, setTimeK] = useState({ ms: 0, s: 0, m: 0, h: 0 });
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
-    const [bg, setBg] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
     const [uangJajan, setUangJajan] = useState(500000);
+    const [icon, setIcon] = useState("");
     const [timeKel, SetTimeKel] = useState("");
     const [isOpenEat, setIsOpenEat] = useState(false);
     const [isOpenSleep, setIsOpenSleep] = useState(false);
@@ -428,12 +428,12 @@ function Game(props) {
 
     function handleInsideCampus() {
         setTempat(5);
-        setPlace("@At UMN");
+        setPlace("@UMN");
     }
 
     function handleInsideHome() {
         setTempat(6);
-        setPlace("@At Home");
+        setPlace("@Home");
     }
 
     function handleLibrary() {
@@ -471,8 +471,51 @@ function Game(props) {
                 setTemp(Math.round(data.main.temp / 10));
                 setWeather(data.weather[0].main);
                 console.log("weather" + weather);
+                setIcon(data.weather[0].icon);
             });
     },[]);
+
+    let weatherLogo;
+
+    if (icon === "01d") {
+        weatherLogo = Images[10].weatherLogo[0].url;
+    } else if (icon === "02d") {
+        weatherLogo = Images[10].weatherLogo[1].url;
+    } else if (icon === "03d") {
+        weatherLogo = Images[10].weatherLogo[2].url;
+    } else if (icon === "04d") {
+        weatherLogo = Images[10].weatherLogo[3].url;
+    } else if (icon === "09d") {
+        weatherLogo = Images[10].weatherLogo[4].url;
+    } else if (icon === "10d") {
+        weatherLogo = Images[10].weatherLogo[5].url;
+    } else if (icon === "11d") {
+        weatherLogo = Images[10].weatherLogo[6].url;
+    } else if (icon === "13d") {
+        weatherLogo = Images[10].weatherLogo[7].url;
+    } else if (icon === "50d") {
+        weatherLogo = Images[10].weatherLogo[8].url;
+    } else if (icon === "01n") {
+        weatherLogo = Images[10].weatherLogo[9].url;
+    } else if (icon === "02n") {
+        weatherLogo = Images[10].weatherLogo[10].url;
+    } else if (icon === "03n") {
+        weatherLogo = Images[10].weatherLogo[11].url;
+    } else if (icon === "04n") {
+        weatherLogo = Images[10].weatherLogo[12].url;
+    } else if (icon === "09n") {
+        weatherLogo = Images[10].weatherLogo[13].url;
+    } else if (icon === "10n") {
+        weatherLogo = Images[10].weatherLogo[14].url;
+    } else if (icon === "11n") {
+        weatherLogo = Images[10].weatherLogo[15].url;
+    } else if (icon === "13n") {
+        weatherLogo = Images[10].weatherLogo[16].url;
+    } else if (icon === "50n") {
+        weatherLogo = Images[10].weatherLogo[17].url;
+    } else {
+        weatherLogo = Images[10].weatherLogo[18].url;
+    }
 
     const start = () => {
         run();
@@ -583,9 +626,9 @@ function Game(props) {
 
     return (
         <div id='gamepage'>
-            {isOpenEat && <AlertPopupEat pict={gakuliah}/>}
+            {/* {isOpenEat && <AlertPopupEat pict={gakuliah}/>}
             {isOpenSleep && <AlertPopupSleep pict={gakuliah}/>}
-            {isOpenPlay && <AlertPopupPlay pict={gakuliah}/>}
+            {isOpenPlay && <AlertPopupPlay pict={gakuliah}/>} */}
 
             <MobileNews />
             <div className='row'>
@@ -826,18 +869,18 @@ function Game(props) {
 
                 <img id='char' src={actionChar} />
 
-                {/* src={Images[0].normal[props.character].url} */}
-
-                <div className="weatherCs col">
-                    <h1 className="weatherStyle">{temp}&#176;C</h1>
+                <div className="weatherCs">
+                    {/* <img src='./assets/icons/02d.png' /> */}
                     <img className="weatherBg" src={WeatherBg} />
+                    <div className='row'>
+                        <img id='logoweather' src={weatherLogo} />
+                        <h1 className="weatherStyle">{temp}&#176;C</h1>
+                    </div>
                 </div>
 
                 {/* Kalo pencet campus > study */}
                 <img src="" className="matkul" />
             </div>
-
-            {/* <Link to='/Rapot'><Button>rapot</Button></Link> */}
         </div>
     );
 }

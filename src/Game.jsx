@@ -102,9 +102,7 @@ function Game(props) {
     const [study, setStudy] = useState(0);
     const [sleep, setSleep] = useState(50);
     const [play, setPlay] = useState(50);
-    const index = 1;
     const [weather, setWeather] = useState();
-    const [news, setNews] = useState([]);
     const [temp, setTemp] = useState();
     const [tempat, setTempat] = useState(1);
     const [place, setPlace] = useState("@Home");
@@ -115,6 +113,7 @@ function Game(props) {
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     const [bg, setBg] = useState(0);
+    const [waktu, setWaktu] = useState("");
 
     function handleEat() {
         setEat(eat + 20);
@@ -370,10 +369,10 @@ function Game(props) {
         setInterv(setInterval(run, 10));
     };
 
-    var updatedMs = time.ms,
-        updatedS = time.s,
-        updatedM = time.m,
-        updatedH = time.h;
+    var updatedMs = timeK.ms,
+        updatedS = timeK.s,
+        updatedM = timeK.m,
+        updatedH = timeK.h;
 
     const run = () => {
         if (updatedM === 24) {
@@ -389,102 +388,12 @@ function Game(props) {
         updatedMs = 0;
         }
         updatedMs++;
-        return setTime({ ms: updatedMs, s: updatedS, m: updatedM, h: updatedH });
+        return setTimeK({ ms: updatedMs, s: updatedS, m: updatedM, h: updatedH });
     };
 
     if (status === 0) {
         start();
     }
-    let condition = false;
-    if(time.m === 5 && time.s === 1){
-        if(weather === "rain"){
-            if(tempat === 1){
-                setBg(1);
-            } else if(tempat === 2){
-                setBg(1);
-            } else if(tempat === 3){
-                setBg(1);
-            } else if(tempat === 4){
-                setBg(1);
-            }
-        } else {
-            if(tempat === 1){
-                setBg(2);
-            } else if(tempat === 2){
-                setBg(2);
-            } else if(tempat === 3){
-                setBg(2);
-            } else if(tempat === 4){
-                setBg(2);
-            }
-        }}
-    // } else if (time.m > 11 && time.m <= 16){
-    //     if(weather === "rain"){
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     } else {
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     }
-    // } else if (time.m > 16 && time.m <= 19){
-    //     if(weather === "rain"){
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     } else {
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     }
-    // } else if (time.m > 19 && time.m <= 23 || time.m >= 0 && time.m <= 4){
-    //     if(weather === "rain"){
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     } else {
-    //         if(tempat === 1){
-    //             setBg(1);
-    //         } else if(tempat === 2){
-    //             setBg(1);
-    //         } else if(tempat === 3){
-    //             setBg(1);
-    //         } else if(tempat === 4){
-    //             setBg(1);
-    //         }
-    //     }
-    // }
 
     useEffect(()=> {
         let hari = document.querySelector(".timeClock");
@@ -496,6 +405,20 @@ function Game(props) {
         setHari(hari);
         console.log(localStorage.getItem("jurusan"));
     }, [])
+
+    useEffect(()=> {
+        let waktu = document.querySelector(".timeClock");
+        waktu = waktu.innerHTML;
+        waktu = waktu.split(" - ");
+        waktu = waktu[1]
+
+        setWaktu(waktu);
+        console.log(waktu);
+        setPlay(play - 5);
+        setSleep(sleep - 5);
+        setStudy(study - 5);
+        setEat(eat - 5);
+    },[timeK.m])
 
     return (
         <>
@@ -510,10 +433,10 @@ function Game(props) {
                     <div className='col-2'></div>
                 </div>
                 
-                {time.m >= 5 && time.m <= 11 ? <img alt=' ' src={BGPagi} className="background-image" /> : ""}
-                {time.m > 11 && time.m <= 16 ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
-                {bg === 1 ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
-                {bg === 2 ? <img alt=' ' src={BGMalam} className="background-image" /> : <img alt=' ' src={BGMalam} className="background-image" />}
+                {/* {timeK.m >= 5 && timeK.m <= 11 ? <img alt=' ' src={BGPagi} className="background-image" /> : ""}
+                {timeK.m > 11 && timeK.m <= 16 ? <img alt=' ' src={BGSiang} className="background-image" /> : ""} */}
+                {waktu === "00:59" ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
+                {waktu === "00:00" ? <img alt=' ' src={BGMalam} className="background-image" /> : ""}
 
                 <Time name={props.name} />
 
@@ -597,7 +520,7 @@ function Game(props) {
                 <h1 className="weatherStyle">{temp}&#176;C</h1>
                 <img className="weatherBg" src={WeatherBg} />
                 </div>
-                <Link to='./Rapot'><Button>rapot</Button></Link>
+                <Link to='./Rapot'><Button item="rapot"/></Link>
             </div>
         </>
     )

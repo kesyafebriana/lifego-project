@@ -6,7 +6,7 @@ const GameGuide = props => {
       <div className='popup-container'>
         <img src={props.pict} className='popup-background'/>
         <div className="popup-description">
-          1. Status pemain akan bertambah sebanyak 2% setiap tombol diklik dan berkurang sebanyak 4% setiap 1 jam permainan.
+          1. Status pemain akan bertambah sebanyak 10% setiap tombol diklik dan berkurang sebanyak 10% setiap 1 jam permainan.
           <br/>2. Terdapat 4 lokasi yang bisa dipilih pemain ketika bermain permainan lifeGo, yaitu cafe, kampus, supermarket, dan rumah.
           <br/>3. Saat berada di cafe, pemain bisa makan, minum, dan ngobrol.
           <br/>4. Saat berada di kampus, pemain bisa makan, belajar, dan bermain.

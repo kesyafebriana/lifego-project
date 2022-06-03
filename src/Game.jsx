@@ -10,9 +10,15 @@ import Button from "./components/button";
 import News from "./components/News";
 import BtnGame from "./components/BtnGame";
 import WeatherBg from "./assets/weather.png";
-import BGSiang from "./assets/siangUMN.png";
-import BGPagi from "./assets/pagiUMN.png";
-import BGMalam from "./assets/malamUMN.png";
+import BG1 from "./assets/bg1.png";
+import BG2Malam from "./assets/bg2malam.png";
+import BG2MalamHujan from "./assets/bg2malamhujan.png";
+import BG2Pagi from "./assets/bg2pagi.png";
+import BG2PagiHujan from "./assets/bg2pagihujan.png";
+import BG2SiangSore from "./assets/bg2siangsore.png";
+import BG2SiangHujan from "./assets/bg2sianghujan.png";
+import BG3 from "./assets/bg3.png";
+import BG4 from "./assets/bg4.png";
 import Majors from './components/Majors';
 
 import informatikaSenin     from "./assets/matkul/Informatika/informatikaSenin.png";
@@ -116,8 +122,8 @@ function Game(props) {
     const [waktu, setWaktu] = useState("");
 
     function handleEat() {
-        setEat(eat + 20);
-        setSleep(sleep - 10);
+        setEat(eat + 10);
+        setSleep(sleep - 5);
 
         if(tempat == 2) {
             let img = document.querySelector(".matkul");
@@ -126,9 +132,9 @@ function Game(props) {
     }
 
     function handleStudy() {
-        setStudy(study + 20);
-        setSleep(sleep - 10);
-        setPlay(play - 10);
+        setStudy(study + 10);
+        setSleep(sleep - 5);
+        setPlay(play - 5);
 
         if(tempat == 2) { //di kampus & lagi belajar
             let img = document.querySelector(".matkul");
@@ -308,14 +314,14 @@ function Game(props) {
     }
 
     function handleSleep() {
-        setSleep(sleep + 20);
-        setStudy(study - 10);
+        setSleep(sleep + 10);
+        setStudy(study - 5);
     }
 
     function handlePlay() {
-        setPlay(play + 20);
-        setEat(eat - 10);
-        setSleep(sleep - 10);
+        setPlay(play + 10);
+        setEat(eat - 5);
+        setSleep(sleep - 5);
 
         if(tempat == 2) {
             let img = document.querySelector(".matkul");
@@ -352,6 +358,7 @@ function Game(props) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
         }
+        console.log(tempat);
     }, [tempat])
 
     useEffect(() => {
@@ -360,6 +367,7 @@ function Game(props) {
             .then((data) => {
                 setTemp(Math.round(data.main.temp / 10));
                 setWeather(data.weather[0].main);
+                console.log(weather);
             });
     },[]);
 
@@ -414,10 +422,10 @@ function Game(props) {
 
         setWaktu(waktu);
         console.log(waktu);
-        setPlay(play - 5);
-        setSleep(sleep - 5);
-        setStudy(study - 5);
-        setEat(eat - 5);
+        setPlay(play - 10);
+        setSleep(sleep - 10);
+        setStudy(study - 10);
+        setEat(eat - 10);
     },[timeK.m])
 
     return (
@@ -433,10 +441,23 @@ function Game(props) {
                     <div className='col-2'></div>
                 </div>
                 
-                {/* {timeK.m >= 5 && timeK.m <= 11 ? <img alt=' ' src={BGPagi} className="background-image" /> : ""}
-                {timeK.m > 11 && timeK.m <= 16 ? <img alt=' ' src={BGSiang} className="background-image" /> : ""} */}
-                {waktu === "00:59" ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
-                {waktu === "00:00" ? <img alt=' ' src={BGMalam} className="background-image" /> : ""}
+                {/* Kuliah (Ada indikator cuaca) */}
+                {weather === "rain" && tempat === 2 && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2PagiHujan} className="background-image" /> : ""}
+                {weather === "rain" && tempat === 2 && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangHujan} className="background-image" /> : ""}
+                {weather === "rain" && tempat === 2 && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2MalamHujan} className="background-image" /> : ""}
+
+                {weather !== "rain" && tempat === 2 && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
+                {weather !== "rain" && tempat === 2 && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangSore} className="background-image" /> : ""}
+                {weather !== "rain" && tempat === 2 && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2Malam} className="background-image" /> : ""}
+
+                {/* Libro Cafe (Tidak ada indikator cuaca & waktu) */}
+                {tempat === 3 ? <img alt=' ' src={BG3} className="background-image" /> : ""}
+
+                {/* Lawsen (Tidak ada indikator cuaca & waktu) */}
+                {tempat === 4 ? <img alt=' ' src={BG4} className="background-image" /> : ""}
+
+                {/* Rumah (Cuma jam aja karena tidak ada indikator cuaca dan waktu) */}
+                {tempat === 1 ? <img alt=' ' src={BG1} className="background-image" /> : ""}
 
                 <Time name={props.name} />
 

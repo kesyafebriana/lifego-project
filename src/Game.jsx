@@ -357,12 +357,12 @@ function Game(props) {
 
     function handleInsideCampus() {
         setTempat(5);
-        setPlace("@At UMN");
+        setPlace("@UMN");
     }
 
     function handleInsideHome() {
         setTempat(6);
-        setPlace("@At Home");
+        setPlace("@Home");
     }
 
     function handleLibrary() {

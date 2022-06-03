@@ -141,7 +141,7 @@ function Game(props) {
     const [status, setStatus] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
-    const [uangJajan, setUangJajan] = useState(500000);
+    // const [uangJajan, props.setUangJajan] = useState(500000);
     const [eat7,setEat7] = useState(0);
     const [sleep7,setSleep7] = useState(0);
     const [play7,setPlay7] = useState(0);
@@ -183,9 +183,8 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat===3){
-            if(uangJajan > 0){
-            setUangJajan(uangJajan-10000);
-        
+            if(props.uangJajan > 0) {
+                props.setUangJajan(props.uangJajan-10000);
             }
         }
     }
@@ -441,8 +440,8 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat===3){
-            if(uangJajan > 0){
-            setUangJajan(uangJajan-5000);
+            if(props.uangJajan > 0){
+            props.setUangJajan(props.uangJajan-5000);
             
             }
         }
@@ -958,7 +957,7 @@ function Game(props) {
                             </div>
                         </div>
                     </div>
-                    {statusLife === 0 ? <Time name={props.name} uangJajan={uangJajan}/> : ""}
+                    {statusLife === 0 ? <Time name={props.name} uangJajan={props.uangJajan}/> : ""}
                     <div className='col'></div>
                 </div>
 

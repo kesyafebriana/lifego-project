@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 export default function MobileNews() {
-  const NEWS_API="https://newsapi.org/v2/top-headlines?country=us&apiKey=f4fed20443dc4cbdb40befd9f68c3587";
+  const NEWS_API="https://newsapi.org/v2/top-headlines?country=us&apiKey=e0967298866744119bffceda6a43aabb";
   const [news, setNews] = useState([]);
 
   useEffect(()=>{

@@ -28,3 +28,44 @@
     text-align: center;
     margin-top: 20px;
 }
+
+.charRapot {
+    width: 60%;
+}
+
+.imageRapot {
+    margin-left: 150px;
+}
+
+.infoRapot {
+    margin-top: 10px;
+    margin-left: -60px;
+}
+
+.information {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: -50px;
+    z-index: 10;
+}
+
+.coursesRapot {
+    margin-left: 130px;
+}
+
+.jajanRapot {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.yeah {
+    margin-left: 10px;
+    margin-top: 160px;
+    position: absolute;
+}
+
+.yeah2 {
+    text-align: center;
+    margin-top: 390px;
+    position: absolute;
+}

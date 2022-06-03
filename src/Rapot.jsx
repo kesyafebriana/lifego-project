@@ -12,10 +12,6 @@ function Rapot(props) {
   const [course3,setCourse3] = useState("");
   const [apapun,setApapun] = useState(0);
 
-  useEffect(function() {
-    console.log("Property Passed : ", props);
-  }, []);
-
   if(props.major === "Akuntansi" && apapun === 0){
     setCourse1("1. Macro Economy");
     setCourse2("2. Intro to Multimedia Technology");
@@ -82,6 +78,12 @@ function Rapot(props) {
       <p>{course2}</p>
       <p>{course3}</p>
       <p>Sisa Uang jajan : {props.uangJajan}</p>
+
+      {props.total === 1 ? <p>Bagus! Kamu rajin belajar!</p> : ""}
+      {props.total === 2 ? <p>Makan kamu banyak banget! Jangan lupa olahraga, ya!</p> : ""}
+      {props.total === 3 ? <p>Kamu banyak tidur! Kamu harusnya belajar!</p> : ""}
+      {props.total === 4 ? <p>Kamu kebanyakan main, jangan lupa belajar ya!</p> : ""}
+      {props.total === 5 ? <p>Hidup kamu balance sekali!</p> : ""}
 
       <div className="logoh">
         <img width="27%" src={Logo} />

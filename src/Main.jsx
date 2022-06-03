@@ -16,6 +16,11 @@ export default function Main() {
     const [name, setName] = useState("");
     const [character, setCharacter] = useState(0);
     const [uangJajan, setUangJajan] = useState(500000);
+    const [eat7,setEat7] = useState(0);
+    const [sleep7,setSleep7] = useState(0);
+    const [play7,setPlay7] = useState(0);
+    const [study7,setStudy7] = useState(0);
+    const [total,setTotal] = useState();
 
     useEffect(() => {
         localStorage.setItem("jurusan", major);
@@ -37,8 +42,8 @@ export default function Main() {
         <BrowserRouter>
             <Routes>
                 <Route />
-                <Route path="rapot" element={<Rapot uangJajan={uangJajan} major={major} name={name} character={character} />} />
-                <Route path="game" element={<Game uangJajan={uangJajan} setUangJajan={setUangJajan} major={major} name={name} character={character} />} />
+                <Route path="rapot" element={<Rapot total={total} uangJajan={uangJajan} major={major} name={name} character={character} />} />
+                <Route path="game" element={<Game total={total} eat7={eat7} sleep7={sleep7} play7={play7} study7={study7} uangJajan={uangJajan} setTotal={setTotal} setEat7={setEat7} setSleep7={setSleep7} setPlay7={setPlay7} setStudy7={setStudy7} setUangJajan={setUangJajan} major={major} name={name} character={character} />} />
                 <Route path="/" element={<App major={getMajor} name={getName} character={getCharacter} />} />
             </Routes>
         </BrowserRouter>

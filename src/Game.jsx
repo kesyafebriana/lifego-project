@@ -136,16 +136,17 @@ function Game(props) {
     const [time, setTime] = useState("");
     const [hari, setHari] = useState("");
     const [jurusan, setJurusan] = useState("");
-    const [timeK, setTimeK] = useState({ ms: 0, s: 55, m: 23, h: 6 });
+    const [timeK, setTimeK] = useState({ ms: 0, s: 40, m: 23, h: 6 });
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
     // const [uangJajan, props.setUangJajan] = useState(500000);
-    const [eat7,setEat7] = useState(0);
-    const [sleep7,setSleep7] = useState(0);
-    const [play7,setPlay7] = useState(0);
-    const [study7,setStudy7] = useState(0);
+    // const [eat7,props.setEat7] = useState(0);
+    // const [sleep7,props.setSleep7] = useState(0);
+    // const [play7,props.setPlay7] = useState(0);
+    // const [props.study7,props.setprops.study7] = useState(0);
+    // const [total,setTotal] = useState();
     const [icon, setIcon] = useState("");
     const [timeKel, SetTimeKel] = useState("");
     const [isOpenEat, setIsOpenEat] = useState(false);
@@ -169,7 +170,7 @@ function Game(props) {
         if(eat<100){
         setEat(eat + 10);
         } else {
-            setEat7(eat7 + 1);
+            props.setEat7(props.eat7 + 1);
             
         }
         if(sleep >= 0){
@@ -193,7 +194,7 @@ function Game(props) {
         if(study<100){
         setStudy(study + 10);
         } else {
-            setStudy7(study7 + 1)
+            props.setStudy7(props.study7 + 1)
             
         }
         if(sleep >= 0){
@@ -391,7 +392,7 @@ function Game(props) {
         if(sleep<=100){
         setSleep(sleep + 10);
         } else {
-            setSleep7(sleep7 + 1);
+            props.setSleep7(props.study7 + 1);
             
         }
         if(study >= 0){
@@ -404,7 +405,7 @@ function Game(props) {
         if(play<100){
         setPlay(play + 10);
         } else {
-            setPlay7(play7 + 1);
+            props.setPlay7(props.play7 + 1);
             
         }
         if(eat >= 0){
@@ -426,7 +427,7 @@ function Game(props) {
         if(eat<100){
         setEat(eat + 10);
         } else {
-            setEat7(eat7 + 1);
+            props.setEat7(props.eat7 + 1);
             
         }
         if(sleep >= 0){
@@ -451,7 +452,7 @@ function Game(props) {
         if(play<100){
         setPlay(play + 10);
         } else {
-            setPlay7(play7 + 1);
+            props.setPlay7(props.play7 + 1);
             
         }
         if(sleep >= 0){
@@ -472,7 +473,7 @@ function Game(props) {
         if(eat<100){
         setEat(eat + 10);
         } else {
-            setEat7(eat7 + 1);
+            props.setEat7(props.eat7 + 1);
             
         }
         if(sleep >= 0){
@@ -712,6 +713,33 @@ function Game(props) {
     const [conditionKesya,setConditionKesya] = useState(false);
     const [statusLife,setStatusLife] = useState(0);
     if(hari>6 && !conditionKesya){
+        if(props.study7>props.eat7){
+            if(props.study7>props.study7){
+                if(props.study7>props.play7){
+                    props.setTotal(1);
+                }
+            }
+        } else if(props.eat7>props.study7){
+            if(props.eat7>props.study7){
+                if(props.eat7>props.play7){
+                    props.setTotal(2);
+                }
+            }
+        } else if(props.sleep7>props.eat7){
+            if(props.sleep7>props.study7){
+                if(props.sleep7>props.play7){
+                    props.setTotal(3);
+                }
+            }
+        } else if(props.play7>props.eat7){
+            if(props.play7>props.study7){
+                if(props.play7>props.study7){
+                    props.setTotal(4);
+                }
+            }
+        } else {
+            props.setTotal(5);
+        }
         setStatusLife(1);
         setConditionKesya(true);
     }

@@ -37,7 +37,6 @@ export default function Main() {
         <BrowserRouter>
             <Routes>
                 <Route />
-                <Route path="rapot" element={<Rapot />} />
                 <Route path="game" element={<Game major={major} name={name} character={character} />} />
                 <Route path="/" element={<App major={getMajor} name={getName} character={getCharacter} />} />
             </Routes>

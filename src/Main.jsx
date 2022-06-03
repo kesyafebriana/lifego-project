@@ -3,6 +3,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
+    HashRouter
 } from "react-router-dom";
 import App from "./App";
 import Game from "./Game";
@@ -39,14 +40,14 @@ export default function Main() {
     }
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route />
                 <Route path="rapot" element={<Rapot total={total} uangJajan={uangJajan} major={major} name={name} character={character} />} />
                 <Route path="game" element={<Game total={total} eat7={eat7} sleep7={sleep7} play7={play7} study7={study7} uangJajan={uangJajan} setTotal={setTotal} setEat7={setEat7} setSleep7={setSleep7} setPlay7={setPlay7} setStudy7={setStudy7} setUangJajan={setUangJajan} major={major} name={name} character={character} />} />
                 <Route path="/" element={<App major={getMajor} name={getName} character={getCharacter} />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 
 }

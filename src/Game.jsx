@@ -10,9 +10,15 @@ import Button from "./components/button";
 import News from "./components/News";
 import BtnGame from "./components/BtnGame";
 import WeatherBg from "./assets/weather.png";
-import BGSiang from "./assets/siangUMN.png";
-import BGPagi from "./assets/pagiUMN.png";
-import BGMalam from "./assets/malamUMN.png";
+import BG1 from "./assets/bg1.png";
+import BG2Malam from "./assets/bg2malam.png";
+import BG2MalamHujan from "./assets/bg2malamhujan.png";
+import BG2Pagi from "./assets/bg2pagi.png";
+import BG2PagiHujan from "./assets/bg2pagihujan.png";
+import BG2SiangSore from "./assets/bg2siangsore.png";
+import BG2SiangHujan from "./assets/bg2sianghujan.png";
+import BG3 from "./assets/bg3.png";
+import BG4 from "./assets/bg4.png";
 import Rapot from './Rapot';
 import Majors from './components/Majors';
 
@@ -99,23 +105,27 @@ import teknikKomputerMinggu from "./assets/matkul/sabtuMinggu.png";
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
 
 function Game(props) {
-    const [eat, setEat] = useState(0);
+    const [eat, setEat] = useState(50);
     const [study, setStudy] = useState(0);
-    const [sleep, setSleep] = useState(0);
-    const [play, setPlay] = useState(0);
-    const index = 1;
+    const [sleep, setSleep] = useState(50);
+    const [play, setPlay] = useState(50);
     const [weather, setWeather] = useState();
-    const [news, setNews] = useState([]);
     const [temp, setTemp] = useState();
     const [tempat, setTempat] = useState(1);
     const [place, setPlace] = useState("@Home");
     const [time, setTime] = useState("");
     const [hari, setHari] = useState("");
     const [jurusan, setJurusan] = useState("");
+    const [timeK, setTimeK] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+    const [interv, setInterv] = useState();
+    const [status, setStatus] = useState(0);
+    const [bg, setBg] = useState(0);
+    const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
 
     function handleEat() {
-        setEat(eat + 20);
+        setEat(eat + 10);
+        setSleep(sleep - 5);
         SetActionChar(Images[2].makan[props.character].url);
 
         if (tempat == 2) {
@@ -125,10 +135,12 @@ function Game(props) {
     }
 
     function handleStudy() {
-        setStudy(study + 20);
+        setStudy(study + 10);
+        setSleep(sleep - 5);
+        setPlay(play - 5);
         SetActionChar(Images[4].belajar[props.character].url);
 
-        if (tempat == 2) { //di kampus & lagi belajar
+        if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) { //di kampus & lagi belajar
             let img = document.querySelector(".matkul");
             img.style.display = "inline-block";
 
@@ -306,32 +318,49 @@ function Game(props) {
     }
 
     function handleSleep() {
-        setSleep(sleep + 20);
+        setSleep(sleep + 10);
+        setStudy(study - 5);
         SetActionChar(Images[5].tidur[props.character].url);
     }
 
     function handlePlay() {
-        setPlay(play + 20);
+        setPlay(play + 10);
+        setEat(eat - 5);
+        setSleep(sleep - 5);
         SetActionChar(Images[3].game[props.character].url);
 
-        if (tempat == 2) {
+        if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
         }
     }
 
     function handleDrink() {
-        setEat(eat + 20);
+        setEat(eat + 10);
+        setSleep(sleep - 5);
         SetActionChar(Images[6].minum[props.character].url);
+
+        if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
+            let img = document.querySelector(".matkul");
+            img.style.display = "none";
+        }
     }
 
     function handleChat() {
-        setPlay(play + 20);
+        setPlay(play + 10);
+        setSleep(sleep - 5);
+        setStudy(study - 5);
         SetActionChar(Images[9].ngobrol[props.character].url);
+
+        if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
+            let img = document.querySelector(".matkul");
+            img.style.display = "none";
+        }
     }
 
     function handleCook() {
-        setEat(eat + 20);
+        setEat(eat + 10);
+        setSleep(sleep - 5);
         SetActionChar(Images[7].masak[props.character].url);
     }
 
@@ -390,26 +419,50 @@ function Game(props) {
             let img = document.querySelector(".matkul");
             img.style.display = "none";
         }
+        console.log(tempat);
     }, [tempat])
 
     useEffect(() => {
         fetch(WEATHER_API)
             .then((res) => res.json())
             .then((data) => {
-                setWeather(data.main.temp / 10);
-                setTemp(Math.round(weather));
+                setTemp(Math.round(data.main.temp / 10));
+                setWeather(data.weather[0].main);
+                console.log(weather);
             });
-    }, []);
+    },[]);
 
-    useEffect(() => {
-        let greeting = document.querySelector(".greeting");
-        greeting = greeting.innerHTML;
-        greeting = greeting.split(",");
-        greeting = greeting[0];
+    const start = () => {
+        run();
+        setStatus(1);
+        setInterv(setInterval(run, 10));
+    };
 
-        setTime(greeting);
-        console.log(greeting);
-    }, [])
+    var updatedMs = timeK.ms,
+        updatedS = timeK.s,
+        updatedM = timeK.m,
+        updatedH = timeK.h;
+
+    const run = () => {
+        if (updatedM === 24) {
+        updatedH++;
+        updatedM = 0;
+        }
+        if (updatedS === 60) {
+        updatedM++;
+        updatedS = 0;
+        }
+        if (updatedMs === 100) {
+        updatedS++;
+        updatedMs = 0;
+        }
+        updatedMs++;
+        return setTimeK({ ms: updatedMs, s: updatedS, m: updatedM, h: updatedH });
+    };
+
+    if (status === 0) {
+        start();
+    }
 
     useEffect(() => {
         let hari = document.querySelector(".timeClock");
@@ -422,14 +475,42 @@ function Game(props) {
         console.log(localStorage.getItem("jurusan"));
     }, [])
 
+    useEffect(()=> {
+        let waktu = document.querySelector(".timeClock");
+        waktu = waktu.innerHTML;
+        waktu = waktu.split(" - ");
+        waktu = waktu[1]
+
+        setWaktu(waktu);
+        console.log(waktu);
+        setPlay(play - 10);
+        setSleep(sleep - 10);
+        setStudy(study - 10);
+        setEat(eat - 10);
+    },[timeK.m])
+
     return (
         <div id='gamepage'>
             <MobileNews />
             <div className='row'>
-                {time === "Good Morning" ? <img alt=' ' src={BGPagi} className="background-image" /> : ""}
-                {time === "Good Afternoon" ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
-                {time === "Good Evening" ? <img alt=' ' src={BGSiang} className="background-image" /> : ""}
-                {time === "Good Night" ? <img alt=' ' src={BGMalam} className="background-image" /> : ""}
+                
+                {/* Kuliah (Ada indikator cuaca) */}
+                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2PagiHujan} className="background-image" /> : ""}
+                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangHujan} className="background-image" /> : ""}
+                {weather === "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2MalamHujan} className="background-image" /> : ""}
+
+                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "04:59" || waktu === "05:00" ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
+                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "10:59" || waktu === "11:00" ? <img alt=' ' src={BG2SiangSore} className="background-image" /> : ""}
+                {weather !== "rain" && (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) && waktu === "19:59" || waktu === "20:00" || waktu === "00:00"? <img alt=' ' src={BG2Malam} className="background-image" /> : ""}
+
+                {/* Libro Cafe (Tidak ada indikator cuaca & waktu) */}
+                {tempat === 3 ? <img alt=' ' src={BG3} className="background-image" /> : ""}
+
+                {/* Lawsen (Tidak ada indikator cuaca & waktu) */}
+                {tempat === 4 ? <img alt=' ' src={BG4} className="background-image" /> : ""}
+
+                {/* Rumah (Cuma jam aja karena tidak ada indikator cuaca dan waktu) */}
+                {(tempat === 1 || tempat === 6 || tempat === 9 || tempat === 10) ? <img alt=' ' src={BG1} className="background-image" /> : ""}
 
                 <div id='setBar' className='row'>
                     <div className='col'></div>

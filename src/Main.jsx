@@ -17,10 +17,6 @@ export default function Main() {
     const [character, setCharacter] = useState(0);
 
     useEffect(() => {
-        console.log(name);
-        console.log(major);
-        console.log(character);
-
         localStorage.setItem("jurusan", major);
     }, [name, major, character])
 
@@ -40,7 +36,7 @@ export default function Main() {
         <BrowserRouter>
             <Routes>
                 <Route />
-                <Route path="rapot" element={<Rapot />} />
+                <Route path="rapot" element={<Rapot major={major} name={name} character={character} />} />
                 <Route path="game" element={<Game major={major} name={name} character={character} />} />
                 <Route path="/" element={<App major={getMajor} name={getName} character={getCharacter} />} />
             </Routes>

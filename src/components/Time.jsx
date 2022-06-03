@@ -3,7 +3,7 @@ import DisplayTime from "./DisplayTime";
 import BtnPauseResume from "./BtnPauseResume";
 
 function Time(props) {
-  const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+  const [time, setTime] = useState({ ms: 0, s: 55, m: 23, h: 6 });
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 

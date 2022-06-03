@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 export default function Bar(props) {
 
     return (
-        <div id="soloBar" className="col row">
+        <div className="soloBar col row">
             <img className="col" src={props.img} />
             <div className="col" id="barContainer">
                 <ProgressBar id="bar" now={props.action} />

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import Game from "./Game";
+import Rapot from "./Rapot";
 import './App.css';
 import './Game.css';
 
@@ -35,6 +36,8 @@ export default function Main() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route />
+                <Route path="rapot" element={<Rapot />} />
                 <Route path="game" element={<Game major={major} name={name} character={character} />} />
                 <Route path="/" element={<App major={getMajor} name={getName} character={getCharacter} />} />
             </Routes>

@@ -143,25 +143,25 @@ function Game(props) {
     const [status, setStatus] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
-    const [uangJajan, setUangJajan] = useState(500000);
-    const [eat7,setEat7] = useState(0);
-    const [sleep7,setSleep7] = useState(0);
-    const [play7,setPlay7] = useState(0);
-    const [study7,setStudy7] = useState(0);
+    // const [uangJajan, props.setUangJajan] = useState(500000);
+    const [eat7, setEat7] = useState(0);
+    const [sleep7, setSleep7] = useState(0);
+    const [play7, setPlay7] = useState(0);
+    const [study7, setStudy7] = useState(0);
     const [icon, setIcon] = useState("");
     const [timeKel, SetTimeKel] = useState("");
     const [isOpenEat, setIsOpenEat] = useState(false);
     const [isOpenSleep, setIsOpenSleep] = useState(false);
     const [isOpenPlay, setIsOpenPlay] = useState(false);
 
-        // window.open(App, "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30");
-       // sessionStorage.setItem("reloading", "true");
-        // window.onload = function () {
-        //     var reloading = sessionStorage.getItem("reloading");
-        //     if (reloading) {// sessionStorage.removeItem("reloading");
-        //     }
-        // }
-    
+    // window.open(App, "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30");
+    // sessionStorage.setItem("reloading", "true");
+    // window.onload = function () {
+    //     var reloading = sessionStorage.getItem("reloading");
+    //     if (reloading) {// sessionStorage.removeItem("reloading");
+    //     }
+    // }
+
     const togglePopupEat = () => {
         setIsOpenEat(!isOpenEat);
     }
@@ -176,14 +176,14 @@ function Game(props) {
     }
 
     function handleEat() {
-        if(eat<100){
-        setEat(eat + 10);
+        if (eat < 100) {
+            setEat(eat + 10);
         } else {
             setEat7(eat7 + 1);
-            
+
         }
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
         SetActionChar(Images[2].makan[props.character].url);
 
@@ -193,23 +193,25 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat === 3) {
-            setUangJajan(uangJajan - 10000);
+            if (props.uangJajan > 0) {
+                props.setUangJajan(props.uangJajan - 10000);
+            }
         }
     }
 
     function handleStudy() {
-        if(study<100){
-        setStudy(study + 10);
+        if (study < 100) {
+            setStudy(study + 10);
         } else {
             setStudy7(study7 + 1)
-            
+
         }
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
 
-        if(play>=0){
-        setPlay(play - 5);
+        if (play >= 0) {
+            setPlay(play - 5);
         }
         SetActionChar(Images[4].belajar[props.character].url);
 
@@ -396,31 +398,31 @@ function Game(props) {
     }
 
     function handleSleep() {
-        if(sleep<=100){
-        setSleep(sleep + 10);
+        if (sleep <= 100) {
+            setSleep(sleep + 10);
         } else {
             setSleep7(sleep7 + 1);
-            
+
         }
-        if(study >= 0){
-        setStudy(study - 5);
+        if (study >= 0) {
+            setStudy(study - 5);
         }
         SetActionChar(Images[5].tidur[props.character].url);
     }
 
     function handlePlay() {
-        if(play<100){
-        setPlay(play + 10);
+        if (play < 100) {
+            setPlay(play + 10);
         } else {
             setPlay7(play7 + 1);
-            
+
         }
-        if(eat >= 0){
-        setEat(eat - 5);
+        if (eat >= 0) {
+            setEat(eat - 5);
         }
 
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
         SetActionChar(Images[3].game[props.character].url);
 
@@ -431,14 +433,14 @@ function Game(props) {
     }
 
     function handleDrink() {
-        if(eat<100){
-        setEat(eat + 10);
+        if (eat < 100) {
+            setEat(eat + 10);
         } else {
             setEat7(eat7 + 1);
-            
+
         }
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
         SetActionChar(Images[6].minum[props.character].url);
 
@@ -448,22 +450,25 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat === 3) {
-            setUangJajan(uangJajan - 5000);
+            if (props.uangJajan > 0) {
+                props.setUangJajan(props.uangJajan - 5000);
+
+            }
         }
     }
 
     function handleChat() {
-        if(play<100){
-        setPlay(play + 10);
+        if (play < 100) {
+            setPlay(play + 10);
         } else {
             setPlay7(play7 + 1);
-            
+
         }
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
-        if(study >= 0){
-        setStudy(study - 5);
+        if (study >= 0) {
+            setStudy(study - 5);
         }
         SetActionChar(Images[9].ngobrol[props.character].url);
 
@@ -474,14 +479,14 @@ function Game(props) {
     }
 
     function handleCook() {
-        if(eat<100){
-        setEat(eat + 10);
+        if (eat < 100) {
+            setEat(eat + 10);
         } else {
             setEat7(eat7 + 1);
-            
+
         }
-        if(sleep >= 0){
-        setSleep(sleep - 5);
+        if (sleep >= 0) {
+            setSleep(sleep - 5);
         }
         SetActionChar(Images[7].masak[props.character].url);
     }
@@ -665,18 +670,19 @@ function Game(props) {
 
         setWaktu(waktu);
         console.log("waktu" + waktu);
-        if(play >= 0){
-        setPlay(play - 10);
+        if (play >= 0) {
+            setPlay(play - 10);
         }
-        if(sleep >= 0){
-        setSleep(sleep - 10);
+        if (sleep >= 0) {
+            setSleep(sleep - 10);
         }
-        if(study >= 0){
-        setStudy(study - 10);
+        if (study >= 0) {
+            setStudy(study - 10);
         }
-        if(eat >= 0){
-        setEat(eat - 10);
-        
+        if (eat >= 0) {
+            setEat(eat - 10);
+        }
+
     }, [timeK.m])
 
     useEffect(() => {
@@ -686,18 +692,18 @@ function Game(props) {
                 setIsOpenEat(false)
             }, 1000 * 3);
         }
-    },[eat])
+    }, [eat])
 
-    useEffect (()=> {
+    useEffect(() => {
         if (sleep >= 100) {
             togglePopupSleep();
             setTimeout(() => {
                 setIsOpenSleep(false)
             }, 1000 * 3);
         }
-    },[sleep])
+    }, [sleep])
 
-    useEffect (()=> {
+    useEffect(() => {
         if (play >= 100) {
             togglePopupPlay();
             setTimeout(() => {
@@ -716,28 +722,28 @@ function Game(props) {
     //         }, 1000*3);
     //     }
     // }
-    const [conditionKesya,setConditionKesya] = useState(false);
-    const [statusLife,setStatusLife] = useState(0);
-    if(hari>6 && !conditionKesya){
+    const [conditionKesya, setConditionKesya] = useState(false);
+    const [statusLife, setStatusLife] = useState(0);
+    if (hari > 6 && !conditionKesya) {
         setStatusLife(1);
         setConditionKesya(true);
     }
 
     if (window.location.reload && cek === 2) {
-        return (<Redirect to = {App} />);
+        return (<Redirect to={App} />);
         cek = false;
     }
 
     return (
         <div id='gamepage'>
-            {isOpenEat && <AlertPopupEat pict={AlertEat}/>}
-            {isOpenSleep && <AlertPopupSleep pict={AlertSleep}/>}
-            {isOpenPlay && <AlertPopupPlay pict={AlertPlay}/>}
+            {isOpenEat && <AlertPopupEat pict={AlertEat} />}
+            {isOpenSleep && <AlertPopupSleep pict={AlertSleep} />}
+            {isOpenPlay && <AlertPopupPlay pict={AlertPlay} />}
 
             <MobileNews />
             <div className='row'>
 
-            {statusLife === 1 ? <Link to='/Rapot'><AlertPopupReport pict={alertReport}/></Link> : ""}
+                {statusLife === 1 ? <Link to='/Rapot'><AlertPopupReport pict={alertReport} /></Link> : ""}
 
                 {/* Kuliah (Ada indikator cuaca) */}
                 {(tempat === 2 || tempat === 5) && (waktu >= 5 && waktu <= 11) ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
@@ -969,7 +975,7 @@ function Game(props) {
                             </div>
                         </div>
                     </div>
-                    <Time name={props.name} uangJajan={uangJajan} />
+                    {statusLife === 0 ? <Time name={props.name} uangJajan={props.uangJajan} /> : ""}
                     <div className='col'></div>
                 </div>
 
@@ -990,5 +996,6 @@ function Game(props) {
         </div>
     );
 }
+
 
 export default Game;

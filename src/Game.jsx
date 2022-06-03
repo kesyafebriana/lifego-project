@@ -330,6 +330,11 @@ function Game(props) {
         SetActionChar(Images[9].ngobrol[props.character].url);
     }
 
+    function handleCook() {
+        setEat(eat + 20);
+        SetActionChar(Images[7].masak[props.character].url);
+    }
+
     function handleHome() {
         setTempat(1);
         setPlace("@Home");
@@ -337,7 +342,7 @@ function Game(props) {
 
     function handleCampus() {
         setTempat(2);
-        setPlace("@Campus");
+        setPlace("@UMN");
     }
 
     function handleLibro() {
@@ -348,6 +353,36 @@ function Game(props) {
     function handleLawsen() {
         setTempat(4);
         setPlace("@Lawsen");
+    }
+
+    function handleInsideCampus() {
+        setTempat(5);
+        setPlace("@At UMN");
+    }
+
+    function handleInsideHome() {
+        setTempat(6);
+        setPlace("@At Home");
+    }
+
+    function handleLibrary() {
+        setTempat(7);
+        setPlace("@Library");
+    }
+
+    function handleClass() {
+        setTempat(8);
+        setPlace("@Class");
+    }
+
+    function handleKitchen() {
+        setTempat(9);
+        setPlace("@Kitchen");
+    }
+
+    function handleBedroom() {
+        setTempat(10);
+        setPlace("@Bedroom");
     }
 
     useEffect(() => {
@@ -387,8 +422,6 @@ function Game(props) {
         console.log(localStorage.getItem("jurusan"));
     }, [])
 
-    console.log(actionChar);
-
     return (
         <div id='gamepage'>
             <MobileNews />
@@ -415,16 +448,16 @@ function Game(props) {
                             <div className='col setBtn'>
                                 {(tempat === 1) ?
                                     <div>
-                                        <BtnBar name="Campus" onClick={handleCampus} />
-                                        <BtnBar name="Libro" onClick={handleLibro} />
+                                        <BtnBar name="UMN" onClick={handleCampus} />
                                         <BtnBar name="Lawsen" onClick={handleLawsen} />
+                                        <BtnBar name="Go Inside" onClick={handleInsideHome} />
                                     </div> : ""
                                 }
                                 {(tempat === 2) ?
                                     <div>
                                         <BtnBar name="Home" onClick={handleHome} />
                                         <BtnBar name="Libro" onClick={handleLibro} />
-                                        <BtnBar name="Lawsen" onClick={handleLawsen} />
+                                        <BtnBar name="Go Inside" onClick={handleInsideCampus} />
                                     </div> : ""
                                 }
                                 {(tempat === 3) ?
@@ -439,6 +472,70 @@ function Game(props) {
                                         <BtnBar name="Home" onClick={handleHome} />
                                         <BtnBar name="Campus" onClick={handleCampus} />
                                         <BtnBar name="Libro" onClick={handleLibro} />
+                                    </div> : ""
+                                }
+                                {/* inside umn */}
+                                {(tempat === 5) ?
+                                    <div>
+                                        <BtnBar name="Library" onClick={handleLibrary} />
+                                        <BtnBar name="Class" onClick={handleClass} />
+                                        <BtnBar name="Exit" onClick={handleCampus} />
+                                    </div> : ""
+                                }
+                                {/* inside home */}
+                                {(tempat === 6) ?
+                                    <div>
+                                        <BtnBar name="Kitchen" onClick={handleKitchen} />
+                                        <BtnBar name="Bedroom" onClick={handleBedroom} />
+                                        <BtnBar name="Exit" onClick={handleHome} />
+                                    </div> : ""
+                                }
+                                {/* inside library */}
+                                {(tempat === 7) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="Library" onClick={handleLibrary} />
+                                        </div>
+                                        <BtnBar name="Exit" onClick={handleInsideCampus} />
+                                        <div className='invisible'>
+                                            <BtnBar name="Class" onClick={handleClass} />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {/* inside class */}
+                                {(tempat === 8) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="Library" onClick={handleLibrary} />
+                                        </div>
+                                        <BtnBar name="Exit" onClick={handleInsideCampus} />
+                                        <div className='invisible'>
+                                            <BtnBar name="Class" onClick={handleClass} />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {/* inside kitchen */}
+                                {(tempat === 9) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="Kitchen" onClick={handleKitchen} />
+                                        </div>
+                                        <BtnBar name="Exit" onClick={handleInsideHome} />
+                                        <div className='invisible'>
+                                            <BtnBar name="Bedroom" onClick={handleBedroom} />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {/* inside bedroom */}
+                                {(tempat === 10) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="Kitchen" onClick={handleKitchen} />
+                                        </div>
+                                        <BtnBar name="Exit" onClick={handleInsideHome} />
+                                        <div className='invisible'>
+                                            <BtnBar name="Bedroom" onClick={handleBedroom} />
+                                        </div>
                                     </div> : ""
                                 }
                             </div>
@@ -474,6 +571,62 @@ function Game(props) {
                                         <BtnBar name="Chitchat" onClick={handleChat} />
                                     </div> : ""
                                 }
+                                {/* inside UMN */}
+                                {(tempat === 5) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                            <BtnBar name="invisible" />
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {/* inside home */}
+                                {(tempat === 6) ?
+                                    <div>
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                            <BtnBar name="invisible" />
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {(tempat === 7) ?
+                                    <div>
+                                        <BtnBar name="Study" onClick={handleStudy} />
+                                        <BtnBar name="Drink" onClick={handleDrink} />
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {(tempat === 8) ?
+                                    <div>
+                                        <BtnBar name="Study" onClick={handleStudy} />
+                                        <BtnBar name="Chitchat" onClick={handleChat} />
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {(tempat === 9) ?
+                                    <div>
+                                        <BtnBar name="Cook" onClick={handleCook} />
+                                        <BtnBar name="Eat" onClick={handleEat} />
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
+                                {(tempat === 10) ?
+                                    <div>
+                                        <BtnBar name="Sleep" onClick={handleSleep} />
+                                        <BtnBar name="Study" onClick={handleStudy} />
+                                        <div className='invisible'>
+                                            <BtnBar name="invisible" />
+                                        </div>
+                                    </div> : ""
+                                }
                             </div>
                         </div>
                     </div>
@@ -494,7 +647,7 @@ function Game(props) {
                 <img src="" className="matkul" />
             </div>
 
-                {/* <Link to='/Rapot'><Button>rapot</Button></Link> */}
+            {/* <Link to='/Rapot'><Button>rapot</Button></Link> */}
         </div>
     );
 }

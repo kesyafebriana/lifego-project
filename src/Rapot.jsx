@@ -64,6 +64,11 @@ function Rapot(props) {
     setApapun(1);
   }
 
+  function handleExit() {
+    props.setUangJajan(500000);
+    console.log("ini uang jajan di rapot " + props.uangJajan);
+  }
+
   return (
     <>
       <div className="coba">
@@ -124,7 +129,7 @@ function Rapot(props) {
         </div>
 
         <div className="tombol">
-          <Link to="/">
+          <Link to="/" onClick={handleExit}>
             <Button item="Exit">Back</Button>
           </Link>
         </div>

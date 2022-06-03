@@ -9,6 +9,7 @@ import Game from "./Game";
 import Rapot from "./Rapot";
 import './App.css';
 import './Game.css';
+import './Rapot.css';
 
 export default function Main() {
     const [major, setMajor] = useState("");

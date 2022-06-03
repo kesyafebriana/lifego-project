@@ -113,9 +113,11 @@ import teknikKomputerSabtu from "./assets/matkul/sabtu.png";
 import teknikKomputerMinggu from "./assets/matkul/gakuliah.png";
 
 import gakuliah from "./assets/matkul/gakuliah.png";
+import alertReport from "./assets/alertReport.png";
 import AlertPopupEat from './components/AlertPopupEat';
 import AlertPopupSleep from './components/AlertPopupSleep';
 import AlertPopupPlay from './components/AlertPopupPlay';
+import AlertPopupReport from './components/AlertPopupReport';
 
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
 
@@ -142,6 +144,7 @@ function Game(props) {
     const [isOpenEat, setIsOpenEat] = useState(false);
     const [isOpenSleep, setIsOpenSleep] = useState(false);
     const [isOpenPlay, setIsOpenPlay] = useState(false);
+    const [isOpenReport, setIsOpenReport] = useState(false);
     const togglePopupEat = () => {
         setIsOpenEat(!isOpenEat);
     }
@@ -151,10 +154,17 @@ function Game(props) {
     const togglePopupPlay = () => {
         setIsOpenPlay(!isOpenPlay);
     }
+    const togglePopupReport = () => {
+        setIsOpenReport(!isOpenReport);
+    }
 
     function handleEat() {
+        if(eat<=100){
         setEat(eat + 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
         SetActionChar(Images[2].makan[props.character].url);
 
         if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
@@ -163,14 +173,23 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat===3){
+            if(uangJajan > 0){
             setUangJajan(uangJajan-10000);
+            }
         }
     }
 
     function handleStudy() {
+        if(study<=100){
         setStudy(study + 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
+
+        if(play>=0){
         setPlay(play - 5);
+        }
         SetActionChar(Images[4].belajar[props.character].url);
 
         if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) { //di kampus & lagi belajar
@@ -179,173 +198,173 @@ function Game(props) {
 
             //Akuntasi
             if (timeKel >= 8 && timeKel <= 17 ){
-                if (hari === "Senin" && localStorage.getItem("jurusan") === "Akuntansi") {
+                if (hari === 1 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiSenin }.akuntansiSenin;
-                } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 2 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiSelasa }.akuntansiSelasa;
-                } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 3 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiRabu }.akuntansiRabu;
-                } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 4 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiKamis }.akuntansiKamis;
-                } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 5 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiJumat }.akuntansiJumat;
-                } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 6 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiSabtu }.akuntansiSabtu;
-                } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Akuntansi") {
+                } else if (hari === 0 && localStorage.getItem("jurusan") === "Akuntansi") {
                     img.src = { akuntansiMinggu }.akuntansiMinggu;
                 }
 
             //Arsitektur
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Arsitektur") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturSenin }.arsitekturSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturSelasa }.arsitekturSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturRabu }.arsitekturRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturKamis }.arsitekturKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturJumat }.arsitekturJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturSabtu }.arsitekturSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Arsitektur") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Arsitektur") {
                 img.src = { arsitekturMinggu }.arsitekturMinggu;
             }
 
             //DKV
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "DKV") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVSenin }.DKVSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVSelasa }.DKVSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVRabu }.DKVRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVKamis }.DKVKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVJumat }.DKVJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVSabtu }.DKVSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "DKV") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "DKV") {
                 img.src = { DKVMinggu }.DKVMinggu;
             }
 
 
             //Film
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Film") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmSenin }.filmSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmSelasa }.filmSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmRabu }.filmRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmKamis }.filmKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmJumat }.filmJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmSabtu }.filmSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Film") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Film") {
                 img.src = { filmMinggu }.filmMinggu;
             }
 
             //Informatika
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Informatika") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaSenin }.informatikaSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaSelasa }.informatikaSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaRabu }.informatikaRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaKamis }.informatikaKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaJumat }.informatikaJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaSabtu }.informatikaSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Informatika") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Informatika") {
                 img.src = { informatikaMinggu }.informatikaMinggu;
             }
 
             //Jurnalistik
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikSenin }.jurnalistikSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikSelasa }.jurnalistikSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikRabu }.jurnalistikRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikKamis }.jurnalistikKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikJumat }.jurnalistikJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikSabtu }.jurnalistikSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Jurnalistik") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Jurnalistik") {
                 img.src = { jurnalistikMinggu }.jurnalistikMinggu;
             }
 
             //Manajemen
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Manajemen") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenSenin }.managemenSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenSelasa }.managemenSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenRabu }.managemenRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenKamis }.managemenKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenJumat }.managemenJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenSabtu }.managemenSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Manajemen") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Manajemen") {
                 img.src = { managemenMinggu }.managemenMinggu;
             }
 
             //Sistem Informasi
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SISenin }.SISenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SISelasa }.SISelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SIRabu }.SIRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SIKamis }.SIKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SIJumat }.SIJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SISabtu }.SISabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Sistem Informasi") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Sistem Informasi") {
                 img.src = { SIMinggu }.SIMinggu;
             }
 
             //Teknik Elektro
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroSenin }.teknikElektroSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroSelasa }.teknikElektroSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroRabu }.teknikElektroRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroKamis }.teknikElektroKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroJumat }.teknikElektroJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroSabtu }.teknikElektroSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Teknik Elektro") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Teknik Elektro") {
                 img.src = { teknikElektroMinggu }.teknikElektroMinggu;
             }
 
             //Teknik Komputer
-            if (hari === "Senin" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            if (hari === 1 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerSenin }.teknikKomputerSenin;
-            } else if (hari === "Selasa" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 2 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerSelasa }.teknikKomputerSelasa;
-            } else if (hari === "Rabu" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 3 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerRabu }.teknikKomputerRabu;
-            } else if (hari === "Kamis" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 4 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerKamis }.teknikKomputerKamis;
-            } else if (hari === "Jumat" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 5 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerJumat }.teknikKomputerJumat;
-            } else if (hari === "Sabtu" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 6 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerSabtu }.teknikKomputerSabtu;
-            } else if (hari === "Minggu" && localStorage.getItem("jurusan") === "Teknik Komputer") {
+            } else if (hari === 0 && localStorage.getItem("jurusan") === "Teknik Komputer") {
                 img.src = { teknikKomputerMinggu }.teknikKomputerMinggu;
             }
         }
@@ -356,15 +375,26 @@ function Game(props) {
 }
 
     function handleSleep() {
+        if(sleep<=100){
         setSleep(sleep + 10);
+        }
+        if(study >= 0){
         setStudy(study - 5);
+        }
         SetActionChar(Images[5].tidur[props.character].url);
     }
 
     function handlePlay() {
+        if(play<=100){
         setPlay(play + 10);
+        }
+        if(eat >= 0){
         setEat(eat - 5);
+        }
+
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
         SetActionChar(Images[3].game[props.character].url);
 
         if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
@@ -374,8 +404,12 @@ function Game(props) {
     }
 
     function handleDrink() {
+        if(eat<=100){
         setEat(eat + 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
         SetActionChar(Images[6].minum[props.character].url);
 
         if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
@@ -389,9 +423,15 @@ function Game(props) {
     }
 
     function handleChat() {
+        if(play<=100){
         setPlay(play + 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
+        if(study >= 0){
         setStudy(study - 5);
+        }
         SetActionChar(Images[9].ngobrol[props.character].url);
 
         if (tempat === 2 || tempat === 5 || tempat === 7 || tempat === 8) {
@@ -401,8 +441,12 @@ function Game(props) {
     }
 
     function handleCook() {
+        if(eat<=100){
         setEat(eat + 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 5);
+        }
         SetActionChar(Images[7].masak[props.character].url);
     }
 
@@ -550,14 +594,11 @@ function Game(props) {
     }
 
     useEffect(() => {
-        let hari = document.querySelector(".timeClock");
-        hari = hari.innerHTML;
-        hari = hari.split(" ");
-        hari = hari[0]
+        let hari = timeK.h;
 
         setJurusan(localStorage.getItem("jurusan"));
         setHari(hari);
-        console.log(localStorage.getItem("jurusan"));
+        console.log("kesya lagi ngetes " + hari);
     }, [timeK.h])
 
     useEffect(()=> {
@@ -586,10 +627,18 @@ function Game(props) {
 
         setWaktu(waktu);
         console.log("waktu" + waktu);
+        if(play >= 0){
         setPlay(play - 10);
+        }
+        if(sleep >= 0){
         setSleep(sleep - 10);
+        }
+        if(study >= 0){
         setStudy(study - 10);
+        }
+        if(eat >= 0){
         setEat(eat - 10);
+        }
     },[timeK.m])
 
     useEffect (()=> {
@@ -623,6 +672,12 @@ function Game(props) {
     //         }, 1000*3);
     //     }
     // }
+    const [conditionKesya,setConditionKesya] = useState(false);
+    const [statusLife,setStatusLife] = useState(0);
+    if(hari>6 && !conditionKesya){
+        setStatusLife(1);
+        setConditionKesya(true);
+    }
 
     return (
         <div id='gamepage'>
@@ -632,6 +687,8 @@ function Game(props) {
 
             <MobileNews />
             <div className='row'>
+
+            {statusLife === 1 ? <Link to='/Rapot'><AlertPopupReport pict={alertReport}/></Link> : ""}
 
                 {/* Kuliah (Ada indikator cuaca) */}
                 {(tempat === 2 || tempat === 5) && (waktu >= 5 && waktu <= 11) ? <img alt=' ' src={BG2Pagi} className="background-image" /> : ""}
@@ -863,7 +920,7 @@ function Game(props) {
                             </div>
                         </div>
                     </div>
-                    <Time name={props.name} uangJajan={uangJajan}/>
+                    {statusLife === 0 ? <Time name={props.name} uangJajan={uangJajan}/> : ""}
                     <div className='col'></div>
                 </div>
 

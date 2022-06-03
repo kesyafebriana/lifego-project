@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+.background {
+    width: 1255px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: scroll;    
+    z-index: -2;
+    margin-top: -10px;
+}
+
+.report {
+    z-index: 2;
+}
+
+.logoh {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tombol {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.rapot {
+    text-align: center;
+    margin-top: 20px;
+}

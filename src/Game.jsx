@@ -118,6 +118,9 @@ import AlertPopupEat from './components/AlertPopupEat';
 import AlertPopupSleep from './components/AlertPopupSleep';
 import AlertPopupPlay from './components/AlertPopupPlay';
 import AlertPopupReport from './components/AlertPopupReport';
+import AlertEat from './assets/alert/alertMakan.png';
+import AlertPlay from './assets/alert/alertMain.png';
+import AlertSleep from './assets/alert/alertTidur.png';
 
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
 
@@ -133,12 +136,16 @@ function Game(props) {
     const [time, setTime] = useState("");
     const [hari, setHari] = useState("");
     const [jurusan, setJurusan] = useState("");
-    const [timeK, setTimeK] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+    const [timeK, setTimeK] = useState({ ms: 0, s: 55, m: 23, h: 6 });
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     const [waktu, setWaktu] = useState("");
     const [actionChar, SetActionChar] = useState(Images[0].normal[props.character].url);
     const [uangJajan, setUangJajan] = useState(500000);
+    const [eat7,setEat7] = useState(0);
+    const [sleep7,setSleep7] = useState(0);
+    const [play7,setPlay7] = useState(0);
+    const [study7,setStudy7] = useState(0);
     const [icon, setIcon] = useState("");
     const [timeKel, SetTimeKel] = useState("");
     const [isOpenEat, setIsOpenEat] = useState(false);
@@ -159,8 +166,11 @@ function Game(props) {
     }
 
     function handleEat() {
-        if(eat<=100){
+        if(eat<100){
         setEat(eat + 10);
+        } else {
+            setEat7(eat7 + 1);
+            
         }
         if(sleep >= 0){
         setSleep(sleep - 5);
@@ -175,13 +185,18 @@ function Game(props) {
         if (tempat === 4 || tempat===3){
             if(uangJajan > 0){
             setUangJajan(uangJajan-10000);
+            
+            console.log("yampun" + uangjajanget);
             }
         }
     }
 
     function handleStudy() {
-        if(study<=100){
+        if(study<100){
         setStudy(study + 10);
+        } else {
+            setStudy7(study7 + 1)
+            
         }
         if(sleep >= 0){
         setSleep(sleep - 5);
@@ -377,6 +392,9 @@ function Game(props) {
     function handleSleep() {
         if(sleep<=100){
         setSleep(sleep + 10);
+        } else {
+            setSleep7(sleep7 + 1);
+            
         }
         if(study >= 0){
         setStudy(study - 5);
@@ -385,8 +403,11 @@ function Game(props) {
     }
 
     function handlePlay() {
-        if(play<=100){
+        if(play<100){
         setPlay(play + 10);
+        } else {
+            setPlay7(play7 + 1);
+            
         }
         if(eat >= 0){
         setEat(eat - 5);
@@ -404,8 +425,11 @@ function Game(props) {
     }
 
     function handleDrink() {
-        if(eat<=100){
+        if(eat<100){
         setEat(eat + 10);
+        } else {
+            setEat7(eat7 + 1);
+            
         }
         if(sleep >= 0){
         setSleep(sleep - 5);
@@ -418,13 +442,19 @@ function Game(props) {
         }
 
         if (tempat === 4 || tempat===3){
+            if(uangJajan > 0){
             setUangJajan(uangJajan-5000);
+            
+            }
         }
     }
 
     function handleChat() {
-        if(play<=100){
+        if(play<100){
         setPlay(play + 10);
+        } else {
+            setPlay7(play7 + 1);
+            
         }
         if(sleep >= 0){
         setSleep(sleep - 5);
@@ -441,8 +471,11 @@ function Game(props) {
     }
 
     function handleCook() {
-        if(eat<=100){
+        if(eat<100){
         setEat(eat + 10);
+        } else {
+            setEat7(eat7 + 1);
+            
         }
         if(sleep >= 0){
         setSleep(sleep - 5);
@@ -642,25 +675,31 @@ function Game(props) {
     },[timeK.m])
 
     useEffect (()=> {
-        if (eat <= 0) {
+        if (eat >= 100) {
             togglePopupEat();
             setTimeout(() => {
             setIsOpenEat(false)
             }, 1000*3);
         }
-        if (sleep <= 0) {
+    },[eat])
+
+    useEffect (()=> {
+        if (sleep >= 100) {
             togglePopupSleep();
             setTimeout(() => {
             setIsOpenSleep(false)
             }, 1000*3);
         }
-        if (play <= 0) {
+    },[sleep])
+
+    useEffect (()=> {
+        if (play >= 100) {
             togglePopupPlay();
             setTimeout(() => {
             setIsOpenPlay(false)
             }, 1000*3);
         }
-    },[eat,sleep,play])
+    },[play])
 
 
     // function alertPopup() {
@@ -681,9 +720,9 @@ function Game(props) {
 
     return (
         <div id='gamepage'>
-            {/* {isOpenEat && <AlertPopupEat pict={gakuliah}/>}
-            {isOpenSleep && <AlertPopupSleep pict={gakuliah}/>}
-            {isOpenPlay && <AlertPopupPlay pict={gakuliah}/>} */}
+            {isOpenEat && <AlertPopupEat pict={AlertEat}/>}
+            {isOpenSleep && <AlertPopupSleep pict={AlertSleep}/>}
+            {isOpenPlay && <AlertPopupPlay pict={AlertPlay}/>}
 
             <MobileNews />
             <div className='row'>

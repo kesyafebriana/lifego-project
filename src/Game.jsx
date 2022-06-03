@@ -116,6 +116,9 @@ import gakuliah from "./assets/matkul/gakuliah.png";
 import AlertPopupEat from './components/AlertPopupEat';
 import AlertPopupSleep from './components/AlertPopupSleep';
 import AlertPopupPlay from './components/AlertPopupPlay';
+import AlertEat from './assets/alert/alertMakan.png';
+import AlertPlay from './assets/alert/alertMain.png';
+import AlertSleep from './assets/alert/alertTidur.png';
 
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?lat=-6.24099652174&lon=106.631889&appid=b43f5f6f6fc6d9ec445455aa52d344f2";
 
@@ -626,9 +629,9 @@ function Game(props) {
 
     return (
         <div id='gamepage'>
-            {/* {isOpenEat && <AlertPopupEat pict={gakuliah}/>}
-            {isOpenSleep && <AlertPopupSleep pict={gakuliah}/>}
-            {isOpenPlay && <AlertPopupPlay pict={gakuliah}/>} */}
+            {isOpenEat && <AlertPopupEat pict={AlertEat}/>}
+            {isOpenSleep && <AlertPopupSleep pict={AlertSleep}/>}
+            {isOpenPlay && <AlertPopupPlay pict={AlertPlay}/>}
 
             <MobileNews />
             <div className='row'>

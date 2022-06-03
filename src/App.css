@@ -281,7 +281,8 @@
     border: #A1AD53;
     height: 34px;
     margin-right: -13px;
-    margin-top: -98px;
+    /* margin-top: -98px; */
+    /* margin-top: -35px; */
 }
 
 .slider {

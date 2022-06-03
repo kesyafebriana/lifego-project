@@ -2,8 +2,20 @@ import React, { useEffect, useState } from "react";
 import Majors from "./Majors";
 import Dropdown from 'react-bootstrap/Dropdown';
 
-export default function InputMajor({majorget}) {
+export default function InputMajor({ majorget }) {
     const [option, setOption] = useState("");
+
+    let margin;
+
+    if (option === "") {
+        margin = -35;
+    } else {
+        margin = -98;
+    }
+
+    let style = {
+        marginTop: margin
+    }
 
     useEffect(() => {
         majorget(option);
@@ -18,16 +30,16 @@ export default function InputMajor({majorget}) {
             <p>{option}</p>
             <div align="end">
                 <Dropdown onSelect={handleSelect}>
-                    <Dropdown.Toggle id="inputMajorBtn">
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        {Majors.map((major) => {
-                            return <Dropdown.Item eventKey={major.value}>{major.value}</Dropdown.Item>
-                        })}
-                    </Dropdown.Menu>
-                </Dropdown>
-            </div>
-
+                    <Dropdown.Toggle style={style} id="inputMajorBtn">
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    {Majors.map((major) => {
+                        return <Dropdown.Item eventKey={major.value}>{major.value}</Dropdown.Item>
+                    })}
+                </Dropdown.Menu>
+            </Dropdown>
         </div>
+
+        </div >
     );
 }

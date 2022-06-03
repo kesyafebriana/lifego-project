@@ -99,12 +99,12 @@
 
 .popup-description {
     position: absolute;
-    top: 23%;
+    top: 20%;
     max-height: 65%;
-    width: 70%;
+    width: 80%;
     margin-bottom: 20px;
     font-family: "Akshar", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 120px;
@@ -156,28 +156,35 @@
     line-height: 1.2;
     margin-right: -55px;
     margin-top: -190px;
+    margin: 0;
+    padding: 0;
+    padding: 0 10%;
 }
 
 .au1 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 120px;
+    padding-left: 115px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
-    padding-top: 100px;
+    padding: 0;
+    margin: 0;
     align-items: center;
+    transform: translateX(5%) translateY(20%);
 }
 
 .au2 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 643px;
+    padding: 0;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
     align-items: center;
-    margin-top: -60px;
+    margin: 0;
+    justify-content: end;
+    transform: translateX(-5%) translateY(-5%);    
 }
 
 .au3 {
@@ -189,17 +196,25 @@
     gap: 35px;
     align-items: center;
     margin-top: 30px;
+    padding: 0;
+    margin: 0;
+    transform: translateX(5%) translateY(-30%);    
 }
 
 .au4 {
     font-family: "Akshar", sans-serif;
     font-size: larger;
-    padding-left: 630px;
+    padding-left: 555px;
     letter-spacing: 0.3px;
     display: flex;
     gap: 35px;
     align-items: center;
-    margin-top: -35px;
+    margin-top: -55px;
+    align-items: center;
+    margin: 0;
+    justify-content: end;
+    padding: 0;
+    transform: translateX(-5%) translateY(-75%);    
 }
 
 .descriptionkanan {
@@ -218,7 +233,7 @@
 }
 
 .buibu {
-    width: 120px;
+    width: 125px;
 }
 
 /* bella */

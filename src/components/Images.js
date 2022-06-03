@@ -48,6 +48,28 @@ import doraNgobrol from './characters/dorangobrolfix.png';
 import harryNgobrol from './characters/harryngobrolfix.png';
 import lisaNgobrol from './characters/lisangobrolfix.png';
 
+import oneD from "../assets/icons/01d.png";
+import twoD from "../assets/icons/02d.png";
+import threeD from "../assets/icons/03d.png";
+import fourD from "../assets/icons/04d.png";
+import nineD from "../assets/icons/09d.png";
+import tenD from "../assets/icons/10d.png";
+import elevenD from "../assets/icons/11d.png";
+import thirteenD from "../assets/icons/13d.png";
+import fiftyD from "../assets/icons/50d.png";
+
+import oneN from "../assets/icons/01n.png";
+import twoN from "../assets/icons/02n.png";
+import threeN from "../assets/icons/03n.png";
+import fourN from "../assets/icons/04n.png";
+import nineN from "../assets/icons/09n.png";
+import tenN from "../assets/icons/10n.png";
+import elevenN from "../assets/icons/11n.png";
+import thirteenN from "../assets/icons/13n.png";
+import fiftyN from "../assets/icons/50n.png";
+
+import unknown from "../assets/icons/unknown.png";
+
 const Images = [
     {normal: [
         {url: diegoNormal},
@@ -108,6 +130,27 @@ const Images = [
         {url: doraNgobrol},
         {url: harryNgobrol},
         {url: lisaNgobrol}
+    ]},
+    {weatherLogo: [
+        {url: oneD},
+        {url: twoD},
+        {url: threeD},
+        {url: fourD},
+        {url: nineD},
+        {url: tenD},
+        {url: elevenD},
+        {url: thirteenD},
+        {url: fiftyD},
+        {url: oneN},
+        {url: twoN},
+        {url: threeN},
+        {url: fourN},
+        {url: nineN},
+        {url: tenN},
+        {url: elevenN},
+        {url: thirteenN},
+        {url: fiftyN},
+        {url: unknown}
     ]}
 ];
 

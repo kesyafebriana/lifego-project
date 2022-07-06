@@ -137,7 +137,7 @@ function Game(props) {
     const [time, setTime] = useState("");
     const [hari, setHari] = useState("");
     const [jurusan, setJurusan] = useState("");
-    const [timeK, setTimeK] = useState({ ms: 0, s: 40, m: 23, h: 6 });
+    const [timeK, setTimeK] = useState({ ms: 0, s: 0, m: 0, h: 0 });
     const [interv, setInterv] = useState();
     const [status, setStatus] = useState(0);
     const [waktu, setWaktu] = useState("");

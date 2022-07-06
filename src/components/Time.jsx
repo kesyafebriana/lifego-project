@@ -3,7 +3,10 @@ import DisplayTime from "./DisplayTime";
 import BtnPauseResume from "./BtnPauseResume";
 
 function Time(props) {
-  const [time, setTime] = useState({ ms: 0, s: 40, m: 23, h: 6 });
+  const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+  // h = hari, m = jam, s = menit, ms = detik
+  // minggu jam 10 => m = 10, h = 0
+  // senin jam 10 => m = 10 h = 1
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
